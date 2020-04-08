@@ -1133,6 +1133,12 @@ section {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .about__content-title-under {
+    left: -20vw;
+  }
+}
+
 .intro {
   background-color: #232532;
   overflow: hidden;
