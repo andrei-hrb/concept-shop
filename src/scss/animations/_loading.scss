@@ -1,0 +1,29 @@
+@keyframes move-up-from-100 {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes move-up-from-0 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform: translate(-50%, -40%) scale(0.8);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

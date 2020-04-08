@@ -1,0 +1,263 @@
+.about {
+  position: relative;
+  background-color: $white;
+  height: 105vh;
+
+  &__rotating {
+    position: absolute;
+    top: -7rem;
+    right: 12rem;
+    display: block;
+    background-image: url("/circle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 12rem;
+    height: 12rem;
+    z-index: 1989;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &-bg {
+      position: absolute;
+      display: inline-block;
+      width: 110%;
+      height: 110%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &:hover &-bg {
+      filter: brightness(100%);
+    }
+
+    &-wrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    &-under {
+      &-wrapper {
+        top: 5%;
+        left: 45%;
+        width: 54rem;
+        height: 70rem;
+      }
+
+      &-bg {
+        z-index: 0;
+        background-position: bottom;
+        background-image: url("/public/about-under.jpg");
+        transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
+        animation: filter-bg 1.5s;
+        animation-delay: 1.5s;
+        filter: brightness(70%);
+      }
+
+      &:hover &-bg {
+        filter: brightness(100%);
+      }
+
+      &-overlay {
+        z-index: 1;
+        z-index: 2;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: -20px;
+        left: -14px;
+        padding: 20px 14px;
+        background-color: $white;
+        animation: 0.8s move-bg-overlay-right;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &-over {
+      &-wrapper {
+        bottom: 5%;
+        left: 50%;
+        width: 54rem;
+        height: 53rem;
+      }
+
+      &-bg {
+        z-index: 4;
+        background-position: left;
+        background-image: url("/public/about-over.jpg");
+        transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
+        animation: filter-bg 1.5s;
+        animation-delay: 1s;
+        filter: brightness(70%);
+      }
+
+      &:hover &-bg {
+        filter: brightness(100%);
+      }
+
+      &-overlay {
+        z-index: 5;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: -18px;
+        left: -14px;
+        padding: 18px 14px;
+        background-color: $white;
+        animation: 0.8s move-bg-overlay;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &__title {
+    &,
+    &-under {
+      width: 80rem;
+      position: absolute;
+    }
+
+    top: 27vh;
+    left: 20vw;
+    color: $blue;
+
+    &-under {
+      top: 21.67vh;
+      left: -25vw;
+      color: $white;
+      z-index: 5;
+    }
+
+    & .word {
+      animation-delay: calc(2.5s /* from bg */ + 80ms * var(--word-index));
+    }
+  }
+
+  &__content {
+    &-wrapper {
+      width: 40rem;
+      position: absolute;
+      top: 62vh;
+      left: 40vw;
+    }
+
+    color: $blue;
+
+    &-under {
+      position: absolute;
+      width: 40rem;
+      color: $white;
+      top: 56.6vh;
+      left: -5vw;
+      z-index: 5;
+    }
+
+    & .word {
+      animation-delay: calc(3.5s + 25ms * var(--word-index));
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about {
+    height: 80vh;
+
+    &__rotating {
+      top: -5rem;
+      right: 4rem;
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &__title {
+      left: 11vw;
+      width: auto;
+
+      &-under {
+        left: -19vw;
+        top: 23vh;
+      }
+    }
+
+    &__image {
+      &-under {
+        &-bg,
+        &-overlay {
+          display: none;
+        }
+
+        &-wrapper {
+          left: 30%;
+          height: 80vh;
+          width: 61vw;
+        }
+      }
+
+      &-over {
+        &-bg {
+          background-position: center;
+        }
+
+        &-bg,
+        &-bg:hover {
+          filter: brightness(70%) !important;
+        }
+
+        &-wrapper {
+          left: unset;
+          bottom: unset;
+          bottom: 0;
+          right: 0;
+          width: 70vw;
+          height: 70vh;
+        }
+      }
+    }
+
+    &__content {
+      &-wrapper {
+        top: unset;
+        bottom: 5%;
+        width: 50rem;
+        left: 23vw;
+      }
+
+      &-under {
+        top: unset;
+        bottom: 10%;
+        left: -7vw;
+        width: 50rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about {
+    &__rotating {
+      top: -3rem;
+      right: 2rem;
+      width: 6rem;
+      height: 6rem;
+    }
+
+    &__content {
+      &-wrapper {
+        width: 27rem;
+      }
+
+      &-under {
+        width: 27rem;
+      }
+    }
+  }
+}

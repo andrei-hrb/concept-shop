@@ -1,0 +1,58 @@
+.title {
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-family: $font;
+  letter-spacing: 1.5rem;
+  color: $white;
+  text-align: left;
+  font-weight: 700;
+  margin: 0;
+
+  & .line {
+    overflow: hidden;
+    display: block;
+    padding-top: 13px;
+  }
+
+  & .word {
+    opacity: 0;
+    animation: 1s fancy-word-effect ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.content {
+  color: $white;
+  font-family: $font;
+  font-size: 2.3rem;
+  letter-spacing: -1px;
+  line-height: 3.5rem;
+
+  & .word {
+    opacity: 0;
+    animation: 0.5s fancy-word-effect-matrix ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .title {
+    font-size: 5.5rem;
+    letter-spacing: 1rem;
+  }
+
+  .content {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+    letter-spacing: 1rem;
+  }
+
+  .content {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,13 @@
+@use "node_modules/normalize.css/normalize.css";
+
+@import "base/base";
+@import "base/typo";
+
+@import "animations/loading";
+@import "animations/scroll";
+
+@import "main/loading";
+@import "main/heading";
+@import "main/about";
+@import "main/intro";
+@import "main/cards";

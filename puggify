@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pug src/pug/index.pug >/dev/null; mv src/pug/index.html index.html;
+
+echo 'Done!'

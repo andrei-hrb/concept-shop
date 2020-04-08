@@ -1,0 +1,38 @@
+include components/title
+include components/content
+
+- const titleContentAbout = ["Noi suntem", "Creangă SPA"]
+- const contentContentAbout = "Un SPA într-un orășel de munte, cu priveliști excepționale ce oferă servicii de relaxare deosebite."
+section#about.about
+    span#about__rotating.about__rotating.rotating
+    +title(
+        "about", 
+        titleContentAbout, 
+        ""
+    )
+    div.about__content-wrapper
+        +content(
+            "about", 
+            contentContentAbout,
+            ""
+        )
+    div.about__image-wrapper.about__image-under-wrapper
+        div.about__image.about__image-under
+            span.about__image-bg.about__image-under-bg.vertical-bg
+            +title(
+                "about", 
+                titleContentAbout, 
+                "under"
+            )
+            +content(
+                "about",
+                contentContentAbout,
+                "under"
+            )
+            span#about__image-under-overlay.about__image-under-overlay
+    div.about__image-wrapper.about__image-over-wrapper
+        div.about__image.about__image-over
+            span.about__image-bg.about__image-over-bg.horizontal-bg
+            span#about__image-over-overlay.about__image-over-overlay
+    
+            

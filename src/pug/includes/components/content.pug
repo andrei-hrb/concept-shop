@@ -1,0 +1,10 @@
+mixin content(section, content, special)
+    - let id = section + "__content"
+    - if (special !== "") id += "-" + special
+    - let classes = ["content", section + "__content", "vertical-text"]
+    - if(special !== "") classes.push(section + "__content-" + special)
+    p(
+        id=id, 
+        class=classes, 
+        data-splitting="words"
+    )!=content

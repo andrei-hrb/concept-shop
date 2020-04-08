@@ -1,0 +1,218 @@
+.card {
+  &s {
+    &__title {
+      &-wrapper {
+        overflow: hidden;
+      }
+
+      width: max-content;
+      color: $gold;
+      opacity: 0.5;
+      margin: 1.5rem 0;
+      margin-left: -230rem;
+
+      & .word {
+        animation: none;
+      }
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      width: 90vw;
+      max-width: 100rem;
+      margin: 0 auto;
+    }
+  }
+
+  display: flex;
+  width: 100vw;
+  max-width: 100rem;
+  height: 75rem;
+  position: relative;
+  margin-bottom: 5rem;
+
+  &-left {
+    & .card__image-overlay {
+      animation-name: move-bg-overlay-left;
+    }
+  }
+
+  &-right {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+
+    & .card__image-overlay {
+      animation-name: move-bg-overlay-right;
+    }
+  }
+
+  &__text {
+    width: 70rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3rem;
+  }
+
+  &__title {
+    color: $gold;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    width: 100%;
+    align-self: center;
+
+    & .line:first-of-type {
+      font-size: 2.5rem;
+    }
+
+    & .word {
+      animation-delay: calc(1.8s /* from bg */ + 80ms * var(--word-index));
+    }
+  }
+
+  &__content {
+    color: black;
+    opacity: 0.9;
+    width: 70%;
+    margin-left: auto;
+    margin-right: 6rem;
+
+    & .word {
+      animation-delay: calc(2.7s + 25ms * var(--word-index));
+    }
+  }
+
+  &__button {
+    width: 20rem;
+    margin: 0 auto;
+    opacity: 0;
+    animation: opacity-anim 1s;
+    animation-delay: 3.4s;
+    animation-fill-mode: forwards;
+  }
+
+  &__image {
+    &-wrapper {
+      height: 100%;
+      width: 70rem;
+      align-self: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    &-bg,
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-bg {
+      z-index: 9;
+      background-size: 140%;
+      background-repeat: no-repeat;
+      background-position: top;
+      filter: brightness(70%);
+      transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
+      animation: filter-bg 1.5s;
+      animation-delay: 1s;
+
+      &:hover {
+        filter: brightness(100%);
+      }
+    }
+
+    &-overlay {
+      z-index: 10;
+      background-color: $white;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card {
+    &__image {
+      &-wrapper {
+        width: 50vw;
+        height: 80vh;
+      }
+
+      &-bg {
+        filter: brightness(70%) !important;
+
+        &:hover {
+          filter: brightness(70%) !important;
+        }
+      }
+    }
+
+    &__text {
+      width: 50vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: unset;
+    height: unset;
+    flex-direction: column;
+    margin-bottom: 10rem;
+
+    &-left {
+      & .card__image-wrapper {
+        margin-right: auto;
+        margin-left: 0.8rem;
+      }
+
+      & .card__title {
+        margin-right: auto;
+      }
+    }
+
+    &-right {
+      & .card__image-wrapper {
+        margin-left: auto;
+      }
+
+      & .card__title {
+        margin-left: auto;
+      }
+    }
+
+    &__image-wrapper {
+      width: 75vw;
+      height: 50vh;
+      margin-bottom: 2.5rem;
+    }
+
+    &__text {
+      width: 85vw;
+      margin: 0 auto;
+    }
+
+    &__title {
+      width: 73vw;
+
+      & .line {
+        padding-top: unset;
+        line-height: calc(100% + 15px);
+      }
+    }
+
+    &__content {
+      margin-left: unset;
+      margin-right: unset;
+      margin: 3rem auto;
+      width: 80%;
+    }
+  }
+}
