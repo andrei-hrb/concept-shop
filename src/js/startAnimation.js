@@ -1,35 +1,41 @@
-let watchedElements = ["heading", "about", "intro"];
-for (var i = 1; i <= 6; i++) {
- watchedElements.push('card-' + i);
-}
-watchedElements.forEach((elm, i) => {
-  watchedElements[i] = document.getElementById(elm);
-});
-console.log(watchedElements);
+export default function startAnimation() {
+  let watchedElements = ["heading", "about", "intro"];
+  for (var i = 1; i <= 6; i++) {
+    watchedElements.push("card-" + i);
+  }
+  watchedElements.forEach((elm, i) => {
+    watchedElements[i] = document.getElementById(elm);
+  });
 
-window.addEventListener("scroll", startingAnimationWindowHandler, {
-  passive: true
-});
+  window.addEventListener("scroll", startingAnimationWindowHandler, {
+    passive: true,
+  });
 
-function startingAnimationWindowHandler() {
-  if (document.getElementById("loading") === null) {
-    watchedElements.forEach((elm, i) => {
-      if (elm.classList.contains("start")) {
-        watchedElements.splice(i, 1);
-      }
+  function isInViewport(elm) {
+    const rect = elm.getBoundingClientRect();
 
-      const distance = elm.getBoundingClientRect();
+    return rect.top < window.innerHeight - 250 && rect.bottom >= 250;
+  }
 
-      if (distance.top <= 400 || distance.bottom <= window.innerHeight + 400) {
-        elm.classList.add("start");
-        watchedElements.splice(i, 1);
-      }
-    });
+  function startingAnimationWindowHandler() {
+    if (document.getElementById("loading") === null) {
+      watchedElements.forEach((elm, i) => {
+        if (elm.classList.contains("start")) {
+          watchedElements.splice(i, 1);
+        }
 
-    if (watchedElements.length === 0) {
-      window.removeEventListener("scroll", startingAnimationWindowHandler, {
-        passive: true
+        if (isInViewport(elm)) {
+          elm.classList.add("start");
+          watchedElements.splice(i, 1);
+        }
       });
+
+      if (watchedElements.length === 0) {
+        window.removeEventListener("scroll", startingAnimationWindowHandler, {
+          passive: true,
+        });
+      }
     }
   }
+  startingAnimationWindowHandler();
 }

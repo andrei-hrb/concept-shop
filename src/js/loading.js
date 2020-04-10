@@ -2,9 +2,10 @@
  * Fancy Loading effect
  */
 const loadingElm = document.getElementById("loading");
-const startingElm = document.getElementById("heading");
+import startAnimation from "./startAnimation";
 
-setTimeout(() => {
-  loadingElm.remove();
-  window.scrollBy(0, 5);
-}, 6200);
+// setTimeout(() => {
+//   loadingElm.remove();
+//   console.log("fixu");
+startAnimation();
+// }, 6400);

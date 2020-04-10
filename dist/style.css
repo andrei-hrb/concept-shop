@@ -1312,6 +1312,11 @@ section {
   margin-bottom: 5rem;
 }
 
+.cards {
+  height: auto;
+  background-color: #f2f2f2;
+}
+
 .cards__title {
   width: max-content;
   color: #968059;
@@ -1506,5 +1511,10 @@ section {
     margin: 3rem auto;
     width: 80%;
   }
+}
+
+.items {
+  background-color: #232532;
+  height: auto;
 }
 

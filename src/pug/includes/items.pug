@@ -1,0 +1,66 @@
+include components/title
+
+mixin item(img, title, price, link)
+    div.item
+        div.item__image
+            span.item__image-bg(
+                style="background-image: url(" + img + ");"
+            )
+        +title(
+            "items",
+            title,
+            "__product"
+        )
+        div.item__price
+            p!=price
+        div.button.item__button.vertical-text
+                div
+                    a(
+                        href=buttonURL
+                    )="Află mai multe"
+                div
+                    a(
+                        href=buttonURL
+                    )="Află mai multe"
+
+
+- const titleContentItems = ["Vizualizează câteva", "exemple din", "pachetele noastre"]
+section#items.items.start
+    +title(
+        "items",
+        titleContentItems,
+        ""
+    )
+    div.items__list
+        -let itemContentTitle = ["Produs exemplu", "#1"]
+        +item(
+            "/public/about-under.jpg",
+            itemContentTitle,
+            35,
+            "#"
+        )
+
+        - itemContentTitle = ["Produs exemplu", "#2"]
+        +item(
+            "/public/about-under.jpg",
+            itemContentTitle,
+            105,
+            "#"
+        )
+
+        - itemContentTitle = ["Produs exemplu", "#3"]
+        +item(
+            "/public/about-under.jpg",
+            itemContentTitle,
+            335,
+            "#"
+        )
+
+         - itemContentTitle = ["Produs exemplu", "#4"]
+        +item(
+            "/public/about-under.jpg",
+            itemContentTitle,
+            5,
+            "#"
+        )
+        

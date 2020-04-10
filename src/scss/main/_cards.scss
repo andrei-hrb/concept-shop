@@ -1,5 +1,7 @@
 .card {
   &s {
+    height: auto;
+    background-color: $white;
     &__title {
       &-wrapper {
         overflow: hidden;
