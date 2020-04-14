@@ -1430,10 +1430,14 @@ splitting__WEBPACK_IMPORTED_MODULE_2___default()();
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startAnimation; });
 function startAnimation() {
-  var watchedElements = ["heading", "about", "intro"];
+  var watchedElements = ["heading", "about", "intro", "items__title", "items__lotus"];
 
   for (var i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);
+  }
+
+  for (var _i = 1; _i <= 4; _i++) {
+    watchedElements.push("item-" + _i);
   }
 
   watchedElements.forEach(function (elm, i) {
@@ -1558,8 +1562,8 @@ watchedElements.map(function (elm) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/hirbu/Documents/casa-creanga-shop/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /Users/hirbu/Documents/casa-creanga-shop/src/scss/app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! /home/hirbu/Sites/casa-creanga-shop/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /home/hirbu/Sites/casa-creanga-shop/src/scss/app.scss */"./src/scss/app.scss");
 
 
 /***/ })

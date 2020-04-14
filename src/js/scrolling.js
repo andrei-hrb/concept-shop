@@ -1,6 +1,6 @@
 const watchedElements = ["heading", "about", "intro", "cards"];
 for (var i = 1; i <= 6; i++) {
- watchedElements.push('card-' + i);
+  watchedElements.push('card-' + i);
 }
 watchedElements
   .map(section => document.getElementById(section))

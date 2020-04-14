@@ -1,18 +1,28 @@
 include components/title
 
+- let right = false
+- let index = 0
 mixin item(img, title, price, link)
-    div.item
+    - const classes = ["item"]
+    - classes.push(right ? "item-right" : "item-left")
+    - right = !right
+    - index = index + 1
+    div(
+        class=classes
+        id=`item-${index}`
+    )
         div.item__image
             span.item__image-bg(
                 style="background-image: url(" + img + ");"
             )
-        +title(
-            "items",
-            title,
-            "__product"
-        )
-        div.item__price
-            p!=price
+        div.item__text-wrapper
+            +title(
+                "item",
+                title,
+                `${index}__product`
+            )
+            div.item__price
+                p!=price
         div.button.item__button.vertical-text
                 div
                     a(
@@ -25,14 +35,14 @@ mixin item(img, title, price, link)
 
 
 - const titleContentItems = ["Vizualizează câteva", "exemple din", "pachetele noastre"]
-section#items.items.start
+section#items.items
     +title(
         "items",
         titleContentItems,
         ""
     )
     div.items__list
-        -let itemContentTitle = ["Produs exemplu", "#1"]
+        -let itemContentTitle = ["Produs", "exemplu", "#1"]
         +item(
             "/public/about-under.jpg",
             itemContentTitle,
@@ -40,7 +50,7 @@ section#items.items.start
             "#"
         )
 
-        - itemContentTitle = ["Produs exemplu", "#2"]
+        - itemContentTitle = ["Produs", "exemplu", "#2"]
         +item(
             "/public/about-under.jpg",
             itemContentTitle,
@@ -48,7 +58,7 @@ section#items.items.start
             "#"
         )
 
-        - itemContentTitle = ["Produs exemplu", "#3"]
+        - itemContentTitle = ["Produs", "exemplu", "#3"]
         +item(
             "/public/about-under.jpg",
             itemContentTitle,
@@ -56,11 +66,12 @@ section#items.items.start
             "#"
         )
 
-         - itemContentTitle = ["Produs exemplu", "#4"]
+        - itemContentTitle = ["Produs", "exemplu", "#4"]
         +item(
             "/public/about-under.jpg",
             itemContentTitle,
             5,
             "#"
         )
-        
+        div#items__lotus.items__lotus
+            span.items__lotus-bg

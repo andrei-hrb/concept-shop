@@ -2,5 +2,225 @@
   &s {
     background-color: $blue;
     height: auto;
+
+    &__title {
+      opacity: 1;
+      animation-delay: 1s;
+    }
+
+    &__list {
+      width: 90%;
+      max-width: 100rem;
+      margin: 0 auto;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $gold;
+      }
+
+      &::before {
+        width: 80%;
+        height: 0.75rem;
+      }
+
+      &::after {
+        width: 0.75rem;
+        height: 80%;
+      }
+    }
+
+    &__lotus {
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      border-radius: 999px;
+      width: 84px;
+      height: 84px;
+      background-color: $blue;
+      transform: translate(-50%, -50%) scale(0) rotate(90deg);
+      animation: lotus 1.2s;
+      animation-delay: 2s;
+      animation-fill-mode: forwards;
+
+      &-bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url('/public/lotus.png');
+        background-size: 52px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  display: inline-block;
+  width: calc(50% - 2.5px - 6rem);
+  height: 65rem;
+  padding: 3rem;
+  margin: 1rem 0;
+  position: relative;
+
+  &-left {
+    text-align: right;
+
+    & .item__title {
+      text-align: right;
+    }
+  }
+
+  &-right {
+    & .item__price {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 40rem;
+
+    &-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text-wrapper {
+    &:hover {
+      & .item__title {
+        opacity: 0.2;
+      }
+
+      & .item__price {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    margin-top: 3rem;
+    transition: 0.7s ease-out;
+
+    & .word {
+      animation: none;
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scaleY(1) rotate(0deg);
+    }
+  }
+
+  &__price {
+    position: absolute;
+    top: 43rem;
+    left: 0;
+    padding: 3rem;
+    opacity: 0.2;
+    transition: 0.7s ease-out;
+
+    & p {
+      display: inline-block;
+      font-size: 16.5rem;
+      font-weight: 500;
+      font-family: $font;
+      margin: 0;
+      color: $white;
+
+      &::after {
+        content: "Lei";
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 5rem !important;
+        font-weight: 700;
+        bottom: 0;
+        right: 0;
+        color: $gold;
+      }
+    }
+  }
+
+  &__button {
+    width: 50%;
+    margin: 3rem auto;
+  }
+}
+
+#item- {
+
+  &1,
+  &3 {
+    transform: translate3d(-100%, 0, 0);
+    animation: enter-from-left 1.3s;
+  }
+
+  &2,
+  &4 {
+    transform: translate3d(100%, 0, 0);
+    animation: enter-from-right 1.3s;
+  }
+
+  &1,
+  &2 {
+    animation-delay: 1s;
+  }
+
+  &3,
+  &4 {
+    animation-delay: 1s;
+  }
+
+  &1,
+  &2,
+  &3,
+  &4 {
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes lotus {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(90deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+}
+
+@keyframes enter-from-left {
+  1% {
+    // annoying out-of-nowere bug, that I don't know were it came from; keep it on 1
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+
+@keyframes enter-from-right {
+  1% {
+    opacity: 1;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
   }
 }

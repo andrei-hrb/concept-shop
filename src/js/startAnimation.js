@@ -1,8 +1,12 @@
 export default function startAnimation() {
-  let watchedElements = ["heading", "about", "intro"];
-  for (var i = 1; i <= 6; i++) {
+  let watchedElements = ["heading", "about", "intro", "items__title", "items__lotus"];
+  for (let i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);
   }
+  for (let i = 1; i <= 4; i++) {
+    watchedElements.push("item-" + i);
+  }
+
   watchedElements.forEach((elm, i) => {
     watchedElements[i] = document.getElementById(elm);
   });
