@@ -1518,18 +1518,34 @@ section {
   width: calc(50% - 2.5px - 6rem);
   height: 65rem;
   padding: 3rem;
-  margin: 1rem 0;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 
 .items {
+  overflow: hidden;
   background-color: #232532;
   height: auto;
 }
 
 .items__title {
-  opacity: 1;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.items__title .word {
+  opacity: 0;
   animation-delay: 1s;
+}
+
+.items__row > * {
+  animation-play-state: paused !important;
+}
+
+.items__row.start > * {
+  animation-play-state: running !important;
 }
 
 .items__list {
@@ -1571,8 +1587,8 @@ section {
   height: 84px;
   background-color: #232532;
   transform: translate(-50%, -50%) scale(0) rotate(90deg);
-  animation: lotus 1.2s;
-  animation-delay: 2s;
+  animation: lotus 1.8s;
+  animation-delay: 2.25s;
   animation-fill-mode: forwards;
 }
 
@@ -1625,8 +1641,8 @@ section {
 }
 
 .item__title .word {
-  animation: none;
   opacity: 1;
+  animation: 0.1s placeholder;
   transform: translate3d(0, 0, 0) scaleY(1) rotate(0deg);
 }
 
@@ -1667,29 +1683,20 @@ section {
 #item-1,
 #item-3 {
   transform: translate3d(-100%, 0, 0);
-  animation: enter-from-left 1.3s;
+  animation: enter-from-left 2.3s;
 }
 
 #item-2,
 #item-4 {
   transform: translate3d(100%, 0, 0);
-  animation: enter-from-right 1.3s;
-}
-
-#item-1,
-#item-2 {
-  animation-delay: 1s;
-}
-
-#item-3,
-#item-4 {
-  animation-delay: 1s;
+  animation: enter-from-right 2.3s;
 }
 
 #item-1,
 #item-2,
 #item-3,
 #item-4 {
+  animation-delay: 0.5s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
@@ -1707,7 +1714,7 @@ section {
 @keyframes enter-from-left {
   1% {
     opacity: 1;
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-200%, 0, 0);
   }
 
   100% {
@@ -1719,12 +1726,22 @@ section {
 @keyframes enter-from-right {
   1% {
     opacity: 1;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(200%, 0, 0);
   }
 
   100% {
     opacity: 1;
     transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes placeholder {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 

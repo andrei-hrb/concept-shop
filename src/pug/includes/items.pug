@@ -42,36 +42,38 @@ section#items.items
         ""
     )
     div.items__list
-        -let itemContentTitle = ["Produs", "exemplu", "#1"]
-        +item(
-            "/public/about-under.jpg",
-            itemContentTitle,
-            35,
-            "#"
-        )
+        div#items__row-1.items__row
+            -let itemContentTitle = ["Produs", "exemplu", "#1"]
+            +item(
+                "/public/about-under.jpg",
+                itemContentTitle,
+                35,
+                "#"
+            )
 
-        - itemContentTitle = ["Produs", "exemplu", "#2"]
-        +item(
-            "/public/about-under.jpg",
-            itemContentTitle,
-            105,
-            "#"
-        )
+            - itemContentTitle = ["Produs", "exemplu", "#2"]
+            +item(
+                "/public/about-under.jpg",
+                itemContentTitle,
+                105,
+                "#"
+            )
 
-        - itemContentTitle = ["Produs", "exemplu", "#3"]
-        +item(
-            "/public/about-under.jpg",
-            itemContentTitle,
-            335,
-            "#"
-        )
+        div#items__row-2.items__row
+            - itemContentTitle = ["Produs", "exemplu", "#3"]
+            +item(
+                "/public/about-under.jpg",
+                itemContentTitle,
+                335,
+                "#"
+            )
 
-        - itemContentTitle = ["Produs", "exemplu", "#4"]
-        +item(
-            "/public/about-under.jpg",
-            itemContentTitle,
-            5,
-            "#"
-        )
+            - itemContentTitle = ["Produs", "exemplu", "#4"]
+            +item(
+                "/public/about-under.jpg",
+                itemContentTitle,
+                5,
+                "#"
+            )
         div#items__lotus.items__lotus
             span.items__lotus-bg

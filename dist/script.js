@@ -1430,14 +1430,10 @@ splitting__WEBPACK_IMPORTED_MODULE_2___default()();
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startAnimation; });
 function startAnimation() {
-  var watchedElements = ["heading", "about", "intro", "items__title", "items__lotus"];
+  var watchedElements = ["heading", "about", "intro", "items__title", "items__row-1", "items__row-2"];
 
   for (var i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);
-  }
-
-  for (var _i = 1; _i <= 4; _i++) {
-    watchedElements.push("item-" + _i);
   }
 
   watchedElements.forEach(function (elm, i) {
@@ -1452,6 +1448,8 @@ function startAnimation() {
     return rect.top < window.innerHeight - 250 && rect.bottom >= 250;
   }
 
+  var lotus = 0;
+
   function startingAnimationWindowHandler() {
     if (document.getElementById("loading") === null) {
       watchedElements.forEach(function (elm, i) {
@@ -1461,6 +1459,8 @@ function startAnimation() {
 
         if (isInViewport(elm)) {
           elm.classList.add("start");
+          if (elm.classList.contains("items__row")) lotus = lotus + 1;
+          if (lotus == 2) document.getElementById("items__lotus").classList.add("start");
           watchedElements.splice(i, 1);
         }
       });
@@ -1491,13 +1491,17 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var watchedElements = ["heading__title-over", "heading__title-under", "about__title", "about__title-under", "intro__title-over", "intro__title-over-mobile", "intro__title-under", "intro__title-under-mobile",
+var watchedElements = ["heading__title-over", "heading__title-under", "about__title", "about__title-under", "intro__title-over", "intro__title-over-mobile", "intro__title-under", "intro__title-under-mobile", "items__title",
 /* Content */
 "heading__content", "about__content", "about__content-under", "intro__content"];
 
 for (var i = 1; i <= 6; i++) {
   watchedElements.push("card__title-" + i);
   watchedElements.push("card__content-" + i);
+}
+
+for (var _i = 1; _i <= 4; _i++) {
+  watchedElements.push("item__title-" + _i + "__product");
 }
 
 function handler(e) {

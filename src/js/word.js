@@ -10,6 +10,8 @@ const watchedElements = [
   "intro__title-under",
   "intro__title-under-mobile",
 
+  "items__title",
+
   /* Content */
 
   "heading__content",
@@ -19,9 +21,12 @@ const watchedElements = [
 
   "intro__content",
 ];
-for (var i = 1; i <= 6; i++) {
+for (let i = 1; i <= 6; i++) {
   watchedElements.push("card__title-" + i);
   watchedElements.push("card__content-" + i);
+}
+for (let i = 1; i <= 4; i++) {
+  watchedElements.push("item__title-" + i + "__product");
 }
 
 function handler(e) {

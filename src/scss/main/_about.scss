@@ -263,13 +263,13 @@
 }
 
 @media only screen and (max-width: 768px) {
-	.about {
-		&__content {
-			&-title {
-				&-under {
-					left: -20vw;
-				}
-			}
-		}
-	}
+  .about {
+    &__content {
+      &-title {
+        &-under {
+          left: -20vw;
+        }
+      }
+    }
+  }
 }
