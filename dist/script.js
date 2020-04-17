@@ -1461,6 +1461,7 @@ function startAnimation() {
           elm.classList.add("start");
           if (elm.classList.contains("items__row")) lotus = lotus + 1;
           if (lotus == 2) document.getElementById("items__lotus").classList.add("start");
+          document.getElementById("items__title").classList.add("start");
           watchedElements.splice(i, 1);
         }
       });

@@ -7,6 +7,11 @@
     &__title {
       margin-top: 5rem;
       text-align: center;
+      line-height: calc(100% + 13px);
+
+      & .line {
+        padding-top: 0;
+      }
 
       & .word {
         opacity: 0;
@@ -238,5 +243,44 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .item {
+    &s {
+      &__title {
+        margin-bottom: 4.5rem;
+      }
+
+      &__list {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      &__lotus {
+        display: none;
+      }
+    }
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 6.75rem;
+
+    &__price {
+      padding: 0;
+      padding-top: 1.5rem;
+
+      & p {
+        font-size: 12rem;
+      }
+    }
+
+    &__button {
+      width: 20rem;
+    }
   }
 }
