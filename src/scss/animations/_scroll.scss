@@ -1,8 +1,7 @@
 .horizontal-text {
-  transform: translate3d(
-    calc((var(--scrolled) - var(--height)) * 4 * -1px), 
-    0, 
-    0);
+  transform: translate3d(calc((var(--scrolled) - var(--height)) * 4 * -1px),
+      0,
+      0);
 }
 
 .rotating {
@@ -11,26 +10,20 @@
 
 @media only screen and (min-width: 1200px) {
   .vertical-text {
-    transform: translate3d(
-      0,
-      calc((var(--scrolled) - var(--height)) / 5 * -1px),
-      0
-    );
+    transform: translate3d(0,
+        calc((var(--scrolled) - var(--height)) / 5 * -1px),
+        0);
   }
 
   .vertical-bg {
-    transform: translate3d(
-      0,
-      calc((var(--scrolled) - var(--height)) / 10 * -1px),
-      0
-    );
+    transform: translate3d(0,
+        calc((var(--scrolled) - var(--height)) / 10 * -1px),
+        0);
   }
 
   .horizontal-bg {
-    transform: translate3d(
-      calc((var(--scrolled) - var(--height)) / 20 * -1px),
-      0,
-      0
-    );
+    transform: translate3d(calc((var(--scrolled) - var(--height)) / 20 * -1px),
+        0,
+        0);
   }
 }

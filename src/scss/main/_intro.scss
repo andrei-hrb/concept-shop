@@ -82,7 +82,9 @@
     }
 
     & .word {
-      animation-delay: calc(1.5s /* from bg */ + 80ms * var(--word-index));
+      animation-delay: calc(1.5s
+          /* from bg */
+          + 80ms * var(--word-index));
     }
 
     & .line {
@@ -101,7 +103,9 @@
     text-align: left;
 
     & .word {
-      animation-delay: calc(2s /* from title */ + 80ms * var(--word-index));
+      animation-delay: calc(2s
+          /* from title */
+          + 80ms * var(--word-index));
     }
   }
 }

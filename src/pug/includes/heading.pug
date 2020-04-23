@@ -2,21 +2,12 @@ include components/title
 include components/content
 
 - const titleContentHeading = ["Relaxare", "în fiecare", "moment"]
-
 section#heading.heading
     div.heading__image
         span#heading__image-bg.heading__image-bg
         span#heading__image-overlay.heading__image-overlay
-        +title(
-            "heading", 
-            titleContentHeading, 
-            "over"
-        )
-    +title(
-        "heading", 
-        titleContentHeading, 
-        "under"
-    )
+        +title("heading", titleContentHeading, "over")
+    +title("heading", titleContentHeading, "under")
     div.heading__content-wrapper
         +content(
             "heading",

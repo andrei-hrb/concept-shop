@@ -8,26 +8,12 @@ mixin card(index, title, content, img, buttonURL)
         id="card-" + index
     )
         div.card__image-wrapper.card__image-wrapper
-            span.card__image-bg.vertical-bg(
-                style="background-image: url(" + img + ");"
-            )
+            span.card__image-bg.vertical-bg(style="background-image: url(" + img + ");")
             span.card__image-overlay
         div.card__text
-            +title(
-                "card",
-                title,
-                index
-            )
-            +content(
-                "card",
-                content,
-                index
-            )
-            +button(
-                "card",
-                "Apasă aici",
-                buttonURL
-            )
+            +title("card", title, index)
+            +content("card", content, index)
+            +button("card", "Apasă aici", buttonURL)
 
 
 section#cards.cards
@@ -94,11 +80,3 @@ section#cards.cards
             "/public/about-under.jpg",
             "#"
         )
-
-
-
-
-
-
-
-

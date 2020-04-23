@@ -4,37 +4,17 @@ include components/button
 
 mixin option(imgURL, gifURL, title, optionList, buttonURL, index)
     - let optionTitleContent = ["Cadou Virtual"]
-    div.option(
-        id=`option-${index}`
-    )
+    div.option(id=`option-${index}`)
         div.option__image
-            span.option__image-img(
-                style=`background-image: url${imgURL}`
-            )
-            span.option__image-gif(
-                style=`background-image: url${gifURL}`
-            )
+            span.option__image-img(style=`background-image: url${imgURL}`)
+            span.option__image-gif(style=`background-image: url${gifURL}`)
         div.option__text
-            +title(
-                "option",
-                title,
-                "1"
-            )
+            +title("option", title, "1")
             ol.option__list
                 each value, index in optionList
-                    li.option__list-item(
-                        style=`--index: ${index}`
-                    )
-                        +content(
-                            "option",
-                            value,
-                            index
-                        )
-            +button(
-                "option",
-                "Comandă acum",
-                buttonURL
-            )
+                    li.option__list-item(style=`--index: ${index}`)
+                        +content("option", value, index)
+            +button("option", "Comandă acum", buttonURL)
 
 
 section#options.options.start

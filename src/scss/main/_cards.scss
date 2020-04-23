@@ -2,6 +2,7 @@
   &s {
     height: auto;
     background-color: $white;
+
     &__title {
       &-wrapper {
         overflow: hidden;
@@ -69,7 +70,9 @@
     }
 
     & .word {
-      animation-delay: calc(1.8s /* from bg */ + 80ms * var(--word-index));
+      animation-delay: calc(1.8s
+          /* from bg */
+          + 80ms * var(--word-index));
     }
   }
 

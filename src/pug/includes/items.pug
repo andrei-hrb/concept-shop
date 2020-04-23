@@ -13,64 +13,26 @@ mixin item(img, title, price, link)
         id=`item-${index}`
     )
         div.item__image
-            span.item__image-bg(
-                style="background-image: url(" + img + ");"
-            )
+            span.item__image-bg(style="background-image: url(" + img + ");")
         div.item__text-wrapper
-            +title(
-                "item",
-                title,
-                `${index}__product`
-            )
-            div.item__price
-                p!=price
-        +button(
-            "item",
-            "Află mai multe",
-            buttonURL
-        )
+            +title("item", title, `${index}__product`)
+            div.item__price p!=price
+        +button("item", "Află mai multe", buttonURL)
 
 
 - const titleContentItems = ["Vizualizează câteva", "exemple din", "pachetele noastre"]
 section#items.items
-    +title(
-        "items",
-        titleContentItems,
-        ""
-    )
+    +title("items", titleContentItems, "")
     div.items__list
         div#items__row-1.items__row
             -let itemContentTitle = ["Produs", "exemplu", "#1"]
-            +item(
-                "/public/about-under.jpg",
-                itemContentTitle,
-                35,
-                "#"
-            )
-
+            +item("/public/about-under.jpg", itemContentTitle, 35, "#")
             - itemContentTitle = ["Produs", "exemplu", "#2"]
-            +item(
-                "/public/about-under.jpg",
-                itemContentTitle,
-                105,
-                "#"
-            )
-
+            +item("/public/about-under.jpg", itemContentTitle, 105, "#")
         div#items__row-2.items__row
             - itemContentTitle = ["Produs", "exemplu", "#3"]
-            +item(
-                "/public/about-under.jpg",
-                itemContentTitle,
-                335,
-                "#"
-            )
-
+            +item( "/public/about-under.jpg", itemContentTitle, 335, "#")
             - itemContentTitle = ["Produs", "exemplu", "#4"]
-            +item(
-                "/public/about-under.jpg",
-                itemContentTitle,
-                5,
-                "#"
-            )
+            +item( "/public/about-under.jpg", itemContentTitle, 5, "#")
         div#items__lotus.items__lotus
             span.items__lotus-bg
