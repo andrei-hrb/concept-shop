@@ -1,0 +1,13 @@
+mixin button(section, content, link)
+    - let classes = ["button", `${section}__button`, "vertical-text"]
+    div(
+        class=classes
+    )
+        div
+            a(
+                href=link
+            )=content
+        div
+            a(
+                href=link
+            )=content

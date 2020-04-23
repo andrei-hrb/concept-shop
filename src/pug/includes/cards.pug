@@ -1,4 +1,5 @@
 include components/title
+include components/button
 
 mixin card(index, title, content, img, buttonURL)
     - const classes = ["card", `card-${index % 2 ? 'left' : 'right'}`];
@@ -22,15 +23,11 @@ mixin card(index, title, content, img, buttonURL)
                 content,
                 index
             )
-            div.button.card__button.vertical-text
-                div
-                    a(
-                        href=buttonURL
-                    )="Apasă aici"
-                div
-                    a(
-                        href=buttonURL
-                    )="Apasă aici"
+            +button(
+                "card",
+                "Apasă aici",
+                buttonURL
+            )
 
 
 section#cards.cards

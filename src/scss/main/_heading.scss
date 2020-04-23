@@ -38,7 +38,7 @@
       height: 100%;
       padding: 10px;
       background-color: $blue;
-      animation: 0.8s move-bg-overlay;
+      animation: 0.8s move-bg-overlay-down;
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
     }
@@ -64,7 +64,9 @@
     }
 
     & .word {
-      animation-delay: calc(1.5s /* from bg */ + 80ms * var(--word-index));
+      animation-delay: calc(1.5s
+          /* from bg */
+          + 80ms * var(--word-index));
     }
   }
 
@@ -83,7 +85,9 @@
     }
 
     & .word {
-      animation-delay: calc(2s /* from bg */ + 25ms * var(--word-index));
+      animation-delay: calc(2s
+          /* from bg */
+          + 25ms * var(--word-index));
     }
   }
 }
@@ -108,7 +112,7 @@
       }
 
       &-overlay {
-        animation: 1.3s move-bg-overlay-mobile;
+        animation: 1.3s move-bg-overlay-up;
         animation-delay: 1s;
         animation-fill-mode: forwards;
       }
@@ -151,6 +155,7 @@
   .heading {
     &__title {
       margin-left: 2rem;
+
       &-under {
         top: calc(40vh - 8rem);
       }

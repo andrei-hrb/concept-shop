@@ -1,10 +1,16 @@
 @use "node_modules/normalize.css/normalize.css";
 
+@import "base/colors";
 @import "base/base";
 @import "base/typo";
 
-@import "animations/loading";
+@import "animations/background";
+@import "animations/content";
+@import "animations/misc";
 @import "animations/scroll";
+@import "animations/title";
+
+@import "components/button";
 
 @import "main/loading";
 @import "main/heading";

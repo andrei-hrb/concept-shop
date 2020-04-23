@@ -1567,8 +1567,8 @@ watchedElements.map(function (elm) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/hirbu/Sites/casa-creanga-shop/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /home/hirbu/Sites/casa-creanga-shop/src/scss/app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/src/scss/app.scss */"./src/scss/app.scss");
 
 
 /***/ })

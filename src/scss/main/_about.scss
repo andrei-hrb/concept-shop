@@ -112,7 +112,7 @@
         left: -14px;
         padding: 18px 14px;
         background-color: $white;
-        animation: 0.8s move-bg-overlay;
+        animation: 0.8s move-bg-overlay-down;
         animation-delay: 1s;
         animation-fill-mode: forwards;
       }
@@ -120,6 +120,7 @@
   }
 
   &__title {
+
     &,
     &-under {
       width: 80rem;
@@ -138,7 +139,9 @@
     }
 
     & .word {
-      animation-delay: calc(2.5s /* from bg */ + 80ms * var(--word-index));
+      animation-delay: calc(2.5s
+          /* from bg */
+          + 80ms * var(--word-index));
     }
   }
 
@@ -190,6 +193,7 @@
 
     &__image {
       &-under {
+
         &-bg,
         &-overlay {
           display: none;

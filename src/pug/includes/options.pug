@@ -1,0 +1,60 @@
+include components/title
+include components/content
+include components/button
+
+mixin option(imgURL, gifURL, title, optionList, buttonURL, index)
+    - let optionTitleContent = ["Cadou Virtual"]
+    div.option(
+        id=`option-${index}`
+    )
+        div.option__image
+            span.option__image-img(
+                style=`background-image: url${imgURL}`
+            )
+            span.option__image-gif(
+                style=`background-image: url${gifURL}`
+            )
+        div.option__text
+            +title(
+                "option",
+                title,
+                "1"
+            )
+            ol.option__list
+                each value, index in optionList
+                    li.option__list-item(
+                        style=`--index: ${index}`
+                    )
+                        +content(
+                            "option",
+                            value,
+                            index
+                        )
+            +button(
+                "option",
+                "Comandă acum",
+                buttonURL
+            )
+
+
+section#options.options.start
+    - let optionTitleContent = ["Cadou Virtual"]
+    - let optionListContent = ["Vei primi un cod", "Se trimite instant pe mail", "Cuprinde toate informațiile necesare", "Cost scăzut", "Nu necesită transport"] 
+    +option(
+        "#",
+        "#",
+        optionTitleContent,
+        optionListContent,
+        "#",
+        1
+    )
+    - optionTitleContent = ["Cadou Fizic"]
+    - optionListContent = ["Include beneficiile cadoului virtual", "Cutie de cadou", "Voucher fizic", "Mesaj unic", "Transport inclus până la client"]
+    +option(
+        "#",
+        "#",
+        optionTitleContent,
+        optionListContent,
+        "#",
+        2
+    )

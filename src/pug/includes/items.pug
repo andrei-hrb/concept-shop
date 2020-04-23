@@ -1,4 +1,5 @@
 include components/title
+include components/button
 
 - let right = false
 - let index = 0
@@ -23,15 +24,11 @@ mixin item(img, title, price, link)
             )
             div.item__price
                 p!=price
-        div.button.item__button.vertical-text
-                div
-                    a(
-                        href=buttonURL
-                    )="Află mai multe"
-                div
-                    a(
-                        href=buttonURL
-                    )="Află mai multe"
+        +button(
+            "item",
+            "Află mai multe",
+            buttonURL
+        )
 
 
 - const titleContentItems = ["Vizualizează câteva", "exemple din", "pachetele noastre"]
