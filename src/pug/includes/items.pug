@@ -16,7 +16,8 @@ mixin item(img, title, price, link)
             span.item__image-bg(style="background-image: url(" + img + ");")
         div.item__text-wrapper
             +title("item", title, `${index}__product`)
-            div.item__price p!=price
+            div.item__price
+                p!=price
         +button("item", "Află mai multe", buttonURL)
 
 

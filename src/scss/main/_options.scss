@@ -1,0 +1,220 @@
+.option {
+  &s {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    opacity: 0;
+    animation: opacity-anim 1s ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    position: relative;
+    height: auto;
+    padding-bottom: 4rem;
+  }
+
+  width: 50rem;
+  height: 70rem;
+  padding-bottom: 4rem;
+  margin-top: 34rem;
+  transition: 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+  0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    padding: 0 2rem;
+  }
+
+  &__title {
+    transform: rotate(90deg);
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &-main {
+      transform: translateX(-50%);
+      color: $blue;
+      text-align: center;
+      top: 0;
+      left: 50%;
+    }
+
+    & .word {
+      transition: 0.3s;
+    }
+  }
+
+  &__list {
+    list-style-image: url(/public/list.png);
+
+    &-item {
+      & .content {
+        font-size: 3.25rem;
+      }
+    }
+  }
+
+  &__content {
+    & .word {
+      transition: 0.3s;
+      animation-delay: calc(2.2s + var(--index) * 1s + 0.15s * var(--word-index));
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 5rem;
+    opacity: 0;
+    width: 70%;
+    animation: opacity-anim 1s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+  }
+
+  &::before {
+    position: absolute;
+    top: -0.85%;
+    left: 59%;
+    text-transform: uppercase;
+    font-family: $font;
+    font-weight: 700;
+    color: $white;
+    opacity: 0.25;
+    transform-origin: 0 0;
+    font-size: 15rem;
+    transform: rotate(90deg);
+  }
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}
+
+#option- {
+  &1 {
+    background-color: $gold;
+
+    &__title {
+      & .word {
+        color: $white;
+      }
+    }
+
+    &__content {
+      & .word {
+        color: $white;
+      }
+    }
+
+    &::before {
+      content: "Cadou Virtual";
+    }
+
+    & .button {
+      &>div:first-of-type {
+        color: $white !important;
+        border: $white solid 1px;
+      }
+
+      &>div:last-of-type {
+        background-color: $white;
+
+        & a {
+          color: $gold;
+        }
+      }
+    }
+  }
+
+  &2 {
+    background-color: $blue;
+
+    &__title {
+      & .word {
+        color: $white;
+      }
+    }
+
+    &__content {
+      & .word {
+        color: $white;
+      }
+    }
+
+    &::before {
+      content: "Cadou Fizic";
+      left: 102.5%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .option {
+    &s {
+      flex-direction: column;
+      height: 140rem;
+      align-items: center;
+    }
+
+    margin-top: 28rem;
+
+    &__text {
+      margin: 0 auto;
+    }
+
+    &__list {
+      &-item {
+        & .content {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &__button {
+      margin-top: 5rem;
+    }
+  }
+
+  #option- {
+    &2 {
+      margin-top: 4rem;
+
+      &::before {
+        left: 59%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .option {
+    &s {
+      height: 110rem;
+    }
+
+    margin-top: 18rem;
+    width: 90vw;
+
+    &__list {
+      &-item {
+        & .content {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &__button {
+      margin-top: 3rem;
+    }
+
+    &::before {
+      font-size: 10rem;
+      left: 24.65vh !important;
+    }
+  }
+}

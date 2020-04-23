@@ -1365,7 +1365,7 @@ section {
 }
 
 .card__content {
-  color: black;
+  color: #2b2b2b;
   opacity: 0.9;
   width: 70%;
   margin-left: auto;
@@ -1782,6 +1782,200 @@ section {
 
   100% {
     opacity: 1;
+  }
+}
+
+.option {
+  width: 50rem;
+  height: 70rem;
+  padding-bottom: 4rem;
+  margin-top: 34rem;
+  transition: 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.options {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 4rem;
+  opacity: 0;
+  animation: opacity-anim 1s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  height: auto;
+  padding-bottom: 4rem;
+}
+
+.option__text {
+  padding: 0 2rem;
+}
+
+.option__title {
+  transform: rotate(90deg);
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.option__title-main {
+  transform: translateX(-50%);
+  color: #232532;
+  text-align: center;
+  top: 0;
+  left: 50%;
+}
+
+.option__title .word {
+  transition: 0.3s;
+}
+
+.option__list {
+  list-style-image: url(/public/list.png);
+}
+
+.option__list-item .content {
+  font-size: 3.25rem;
+}
+
+.option__content .word {
+  transition: 0.3s;
+  animation-delay: calc(2.2s + var(--index) * 1s + 0.15s * var(--word-index));
+}
+
+.option__button {
+  margin: 0 auto;
+  margin-top: 5rem;
+  opacity: 0;
+  width: 70%;
+  animation: opacity-anim 1s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
+
+.option::before {
+  position: absolute;
+  top: -0.85%;
+  left: 59%;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  color: #f2f2f2;
+  opacity: 0.25;
+  transform-origin: 0 0;
+  font-size: 15rem;
+  transform: rotate(90deg);
+}
+
+.option:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+#option-1 {
+  background-color: #968059;
+}
+
+#option-1__title .word {
+  color: #f2f2f2;
+}
+
+#option-1__content .word {
+  color: #f2f2f2;
+}
+
+#option-1::before {
+  content: "Cadou Virtual";
+}
+
+#option-1 .button > div:first-of-type {
+  color: #f2f2f2 !important;
+  border: #f2f2f2 solid 1px;
+}
+
+#option-1 .button > div:last-of-type {
+  background-color: #f2f2f2;
+}
+
+#option-1 .button > div:last-of-type a {
+  color: #968059;
+}
+
+#option-2 {
+  background-color: #232532;
+}
+
+#option-2__title .word {
+  color: #f2f2f2;
+}
+
+#option-2__content .word {
+  color: #f2f2f2;
+}
+
+#option-2::before {
+  content: "Cadou Fizic";
+  left: 102.5%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .option {
+    margin-top: 28rem;
+  }
+
+  .options {
+    flex-direction: column;
+    height: 140rem;
+    align-items: center;
+  }
+
+  .option__text {
+    margin: 0 auto;
+  }
+
+  .option__list-item .content {
+    font-size: 2.5rem;
+  }
+
+  .option__button {
+    margin-top: 5rem;
+  }
+
+  #option-2 {
+    margin-top: 4rem;
+  }
+
+  #option-2::before {
+    left: 59%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .option {
+    margin-top: 18rem;
+    width: 90vw;
+  }
+
+  .options {
+    height: 110rem;
+  }
+
+  .option__list-item .content {
+    font-size: 2rem;
+  }
+
+  .option__button {
+    margin-top: 3rem;
+  }
+
+  .option::before {
+    font-size: 10rem;
+    left: 24.65vh !important;
   }
 }
 
