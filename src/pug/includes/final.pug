@@ -1,9 +1,13 @@
 include components/title
 
 section#final.final
-    - let finalTitleContent = ["Nu mai aștepta ocazia perfectă sau un moment anume"]
-    +title("final", finalTitleContent, "left")
-    - finalTitleContent = ["Comandă acum cadoul ideal și original"]
-    +title("final", finalTitleContent, "right")
-    - finalTitleContent = ["Sigur îți vrei surprinde persoanele dragi"]
-    +title("final", finalTitleContent, "left")
+    div.final__container
+        div.final__title-wrapper(style="--index: 1")
+            - let finalTitleContent = ["Nu mai aștepta ocazia perfectă sau un moment anume"]
+            +title("final", finalTitleContent, "left")
+        div.final__title-wrapper(style="--index: 2")
+            - finalTitleContent = ["Comandă acum cadoul ideal și original"]
+            +title("final", finalTitleContent, "right")
+        div.final__title-wrapper(style="--index: 3")
+            - finalTitleContent = ["Sigur îți vrei surprinde persoanele dragi"]
+            +title("final", finalTitleContent, "left")

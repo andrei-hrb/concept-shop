@@ -11,6 +11,8 @@ export default function startAnimation() {
     "items__row-2",
 
     "options",
+
+    "final",
   ];
   for (let i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);
@@ -43,7 +45,6 @@ export default function startAnimation() {
           if (elm.classList.contains("items__row")) lotus = lotus + 1;
           if (lotus == 2)
             document.getElementById("items__lotus").classList.add("start");
-          document.getElementById("items__title").classList.add("start");
           watchedElements.splice(i, 1);
         }
       });

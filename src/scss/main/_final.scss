@@ -1,0 +1,96 @@
+.final {
+  background-color: $blue;
+  height: auto;
+  overflow: hidden;
+
+  &__container {
+    height: 120vh;
+    max-width: 140rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__title {
+    font-size: 6rem;
+    width: 80%;
+
+    & .word {
+      opacity: 1;
+      animation: none;
+    }
+
+    &-left {
+      text-align: left;
+      margin-right: auto;
+      padding-left: 5rem;
+      transform: translateX(-200%);
+      animation: from-left 1s ease-out;
+      animation-delay: calc(1s * var(--index));
+      animation-fill-mode: forwards;
+    }
+
+    &-right {
+      text-align: right;
+      margin-left: auto;
+      padding-right: 5rem;
+      transform: translateX(200%);
+      animation: from-right 1s ease-out;
+      animation-delay: calc(1s * var(--index));
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .final {
+    &__title {
+      font-size: 5rem;
+
+      &-left {
+        padding-left: 3.5rem;
+      }
+
+      &-right {
+        padding-right: 3.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .final {
+    &__title {
+      font-size: 3.5rem;
+
+      &-left {
+        padding-left: 2rem;
+      }
+
+      &-right {
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+@keyframes from-left {
+  from {
+    transform: translateX(-200%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-right {
+  from {
+    transform: translateX(200%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
