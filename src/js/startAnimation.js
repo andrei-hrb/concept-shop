@@ -36,6 +36,7 @@ export default function startAnimation() {
   function startingAnimationWindowHandler() {
     if (document.getElementById("loading") === null) {
       watchedElements.forEach((elm, i) => {
+        console.log(elm);
         if (elm.classList.contains("start")) {
           watchedElements.splice(i, 1);
         }

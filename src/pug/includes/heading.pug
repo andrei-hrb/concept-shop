@@ -1,19 +1,19 @@
 include components/title
 include components/content
 
-- const titleContentHeading = ["Relaxare", "în fiecare", "moment"]
+- $titleContentHeading = ["Relaxare", "în fiecare", "moment"]
 section#heading.heading
     div.heading__image
         span#heading__image-bg.heading__image-bg
         span#heading__image-overlay.heading__image-overlay
-        +title("heading", titleContentHeading, "over")
-    +title("heading", titleContentHeading, "under")
+        +title("heading", $titleContentHeading, "over")
+    +title("heading", $titleContentHeading, "under")
     div.heading__content-wrapper
         +content(
             "heading",
-            `Imaginează-te într-un cadru natural de vis, relaxat, 
+            "Imaginează-te într-un cadru natural de vis, relaxat, 
             experimentând noi terapii SPA sau înnotând în piscina 
             cristalină a SPA- ului nostru; Lasă-ne să avem grijă de 
-            starea ta de bine.`,
+            starea ta de bine.",
             ""
         )

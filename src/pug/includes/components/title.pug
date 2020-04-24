@@ -1,12 +1,12 @@
-mixin title(section, content, special)
-    - let id = section + "__title";
-    - if (special !== "") id += "-" + special;
-    - let classes = ["title", section + "__title", "vertical-text"];
-    - if (special !== "") classes.push(section + "__title-" + special);
+mixin title($section, $content, $special)
+    - $id = $section . "__title" . ($special !== "" ? "-" . $special : "");
+    - $classes = ["title", $section . "__title", "vertical-text", ($special !== "") ? $section . "__title-" . $special : ""];
     h3(
-        id=id
-        class=classes
+        id=$id
+        class=$classes
         data-splitting="words"
     )
-        each line in content
-            span.line=line
+        - $i = 0;
+        while $i < count($content)
+            span.line=$content[$i]
+            - $i++
