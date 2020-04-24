@@ -1430,7 +1430,7 @@ splitting__WEBPACK_IMPORTED_MODULE_2___default()();
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startAnimation; });
 function startAnimation() {
-  var watchedElements = ["heading", "about", "intro", "items__title", "items__row-1", "items__row-2"];
+  var watchedElements = ["heading", "about", "intro", "items__title", "items__row-1", "items__row-2", "options"];
 
   for (var i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);

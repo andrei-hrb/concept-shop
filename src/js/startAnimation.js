@@ -9,6 +9,8 @@ export default function startAnimation() {
     "items__title",
     "items__row-1",
     "items__row-2",
+
+    "options",
   ];
   for (let i = 1; i <= 6; i++) {
     watchedElements.push("card-" + i);

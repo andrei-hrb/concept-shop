@@ -3,7 +3,10 @@ include components/content
 include components/button
 
 mixin option(optionList, buttonURL, index)
-    div.option(id=`option-${index}`)
+    div.option(
+        id=`option-${index}`
+        style=`--option: ${index - 1}`
+    )
         div.option__text
             ul.option__list
                 each value, index in optionList
@@ -12,7 +15,7 @@ mixin option(optionList, buttonURL, index)
             +button("option", "Comandă acum", buttonURL)
 
 
-section#options.options.start
+section#options.options
     - let optionTitleContent = ["Faceți", "alegerea", "potrivită"]
     +title("option", optionTitleContent, "main")
     - let optionListContent = ["Vei primi un cod", "Se trimite instant pe mail", "Cuprinde toate informațiile necesare", "Cost scăzut", "Nu necesită transport"] 
