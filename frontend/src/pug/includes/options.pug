@@ -8,6 +8,7 @@ mixin option($title, $optionList, $buttonURL, $editable)
     div.option(
         id="option-" . $index
         style="--option: " . ($index - 1) . "; --title: '" . $title . "';"
+        data-editable=($editable . "title")
     )
         div.option__text
             ul.option__list(

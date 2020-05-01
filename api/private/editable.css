@@ -1,0 +1,29 @@
+.editable.focused {
+  outline: 5px solid rgba(255, 215, 0, 0.75);
+}
+
+.editable.focused.edited {
+  outline: 5px solid rgba(255, 99, 71, 0.75);
+}
+
+#editable-loading {
+  position: fixed;
+  z-index: 9001; /* https://www.youtube.com/watch?v=SiMHTK15Pik */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#editable-loading-gif {
+  background-image: url(/frontend/public/loading.gif);
+  filter: contrast(18);
+  display: block;
+  background-size: cover;
+  width: 5rem;
+  height: 5rem;
+}

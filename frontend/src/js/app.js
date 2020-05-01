@@ -1,7 +1,6 @@
 /**
  * Index file
  */
-console.log("da");
 import "./word";
 import "./loading";
 import "./imageEntrance";

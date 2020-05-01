@@ -1307,7 +1307,6 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Index file
  */
-console.log("da");
 
 
 
@@ -1459,8 +1458,6 @@ function startAnimation() {
   function startingAnimationWindowHandler() {
     if (document.getElementById("loading") === null) {
       watchedElements.forEach(function (elm, i) {
-        console.log(elm);
-
         if (elm.classList.contains("start")) {
           watchedElements.splice(i, 1);
         }

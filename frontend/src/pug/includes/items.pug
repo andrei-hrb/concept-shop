@@ -19,7 +19,7 @@ mixin item($img, $title, $price, $link, $editable)
             +title("item", $title, $index . "__product")
             div.item__price
                 p!=$price
-        +button("item", $items->button, $buttonURL)
+        +button("item", $items->button, $buttonURL, ($editable ? "items.content.button" : null))
 
 
 section#items.items

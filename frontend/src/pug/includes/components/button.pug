@@ -2,9 +2,13 @@ mixin button($section, $content, $link, $editable)
     - $classes = ["button", $section . "__button", "vertical-text"]
     div(
         class=$classes
-        data-editable=$editable
     )
-        div
+        div(
+            data-editable=$editable
+        )
             a(href=$link)=$content
-        div
+        div(
+            data-editable=$editable
+            
+        )
             a(href=$link)=$content

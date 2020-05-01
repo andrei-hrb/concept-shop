@@ -8,10 +8,11 @@ mixin card($index, $title, $content, $img, $buttonURL, $editable)
         id="card-" . $index
         data-editable=$editable
     )
-        div.card__image-wrapper.card__image-wrapper
+        div.card__image-wrapper.card__image-wrapper(
+                data-editable=($editable ? $editable . "imagine" : null)
+        )
             span.card__image-bg.vertical-bg(
                 style="background-image: url(" . $img . ");"
-                data-editable=($editable ? $editable . "imagine" : null))
             )
             span.card__image-overlay
         div.card__text

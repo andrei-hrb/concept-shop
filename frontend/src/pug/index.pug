@@ -6,8 +6,10 @@ html(lang="en")
         title Document
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap")
         link(rel="stylesheet", href="/frontend/dist/style.css")
+        - if ($editable && $assets["css"])
+            style=$assets["css"]
     body(
-        class=$editable ? "editable" : ""
+        class!=$editable ? "editable" : ""
     )
         main
             if ($noloading)
@@ -20,3 +22,5 @@ html(lang="en")
             include includes/options
             include includes/final
         script(src="/frontend/dist/script.js")
+        - if ($editable && $assets["js"])
+            script!=$assets["js"]

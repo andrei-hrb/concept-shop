@@ -2,10 +2,11 @@ include components/title
 include components/content
 
 section#heading.heading
-    div.heading__image
+    div.heading__image(
+        data-editable=$editable ? "heading.image" : null
+    )
         span#heading__image-bg.heading__image-bg(
             style="background-image: url('" . $heading->image . "');"
-            data-editable=$editable ? "heading.image" : null
         )
         span#heading__image-overlay.heading__image-overlay
         +title("heading", $heading->title, "over", $editable ? "heading.title" : null)
