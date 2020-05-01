@@ -5,7 +5,8 @@ include 'defaults/index.php';
 
 $pug = new Pug([
     'pretty' => true,
-    'expressionLanguage' => 'php'
+    'expressionLanguage' => 'php',
+    'cache' => __DIR__ . '/cache/pug'
 ]);
 
 $defaults = new Defaults();
