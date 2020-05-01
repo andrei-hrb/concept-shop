@@ -1,23 +1,17 @@
 include components/title
 include components/content
 
-- $introContentHeading = ["Aici venim să vă", "prezentăm noul", "concept SPA GIFT"]
-- $introContentHeadingMobile = ["Aici venim", "să vă", "prezentăm", "noul", "concept", "SPA GIFT"];
 section#intro.intro
     div.intro__image-wrapper
         div.intro__image
             div.intro__image-container
-                span.intro__image-bg.vertical-bg
-                +title("intro", $introContentHeading, "under")
-                +title("intro", $introContentHeadingMobile, "under-mobile")
+                span.intro__image-bg.vertical-bg(
+                    style="background-image: url('" . $intro->image . "');"
+                )
+                +title("intro", $intro->title->desktop, "under")
+                +title("intro", $intro->title->mobile, "under-mobile")
             span#intro__image-overlay.intro__image-overlay
                 span.intro__image-overlay-deg
-    +title("intro", $introContentHeading, "over")
-    +title("intro", $introContentHeadingMobile, "over-mobile")
-    +content(
-        "intro",
-        "Decide să oferi celor dragi cadouri originale - 
-        Cumpăra-le un voucher cadou la SPA și fii sigur că 
-        nu-l vor uita niciodată.",
-        ""
-    )
+    +title("intro", $intro->title->desktop, "over")
+    +title("intro", $intro->title->mobile, "over-mobile")
+    +content("intro", $intro->content, "")

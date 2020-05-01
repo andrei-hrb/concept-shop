@@ -1,0 +1,15 @@
+{
+  "title": {
+    "desktop": ["Aici venim să vă", "prezentăm noul", "concept SPA GIFT"],
+    "mobile": [
+      "Aici venim",
+      "să vă",
+      "prezentăm",
+      "noul",
+      "concept",
+      "SPA GIFT"
+    ]
+  },
+  "content": "Decide să oferi celor dragi cadouri originale - Cumpăra-le un voucher cadou la SPA și fii sigur că nu-l vor uita niciodată.",
+  "image": "/public/intro.jpg"
+}

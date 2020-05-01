@@ -52,7 +52,6 @@
       &-bg {
         z-index: 0;
         background-position: bottom;
-        background-image: url("/public/about-under.jpg");
         transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
         animation: filter-bg 1.5s;
         animation-delay: 1.5s;
@@ -91,7 +90,6 @@
       &-bg {
         z-index: 4;
         background-position: left;
-        background-image: url("/public/about-over.jpg");
         transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
         animation: filter-bg 1.5s;
         animation-delay: 1s;

@@ -13,70 +13,25 @@ mixin card($index, $title, $content, $img, $buttonURL)
         div.card__text
             +title("card", $title, $index)
             +content("card", $content, $index)
-            +button("card", "Apasă aici", $buttonURL)
+            +button("card", $cards->button, $buttonURL)
 
 
 section#cards.cards
     div.cards__title-wrapper
-        - $cardsContentTitle = "Alege dintr-o gamă de peste 40 de modalități de relaxare";
         - $classes = ["title", "cards__title", "horizontal-text"];
         h3(
             id="cards__title" 
             class=$classes
         )
-            span.line=$cardsContentTitle
+            span.line=$cards->title
     div.cards__container
-        - $cardContentTitle = ["1.", "Intrări la SPA", "cu cele 9", "facilități incluse"]
-        +card(
-            1,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
-        - $cardContentTitle = ["2.", "Masaje sau", "terapii unice"]
-        +card(
-            2,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
-        - $cardContentTitle = ["3.", "Pachete combinate", "faciale"]
-        +card(
-            3,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
-        - $cardContentTitle = ["4.", "Pachete combinate", "de remodelare", "corporală"]
-        +card(
-            4,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
-        - $cardContentTitle = ["5.", "Pachete pentru", "amelioarera", "durerilor"]
-        +card(
-            5,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
-        - $cardContentTitle = ["6.", "Terapii combinate", "cu apă"]
-        +card(
-            6,
-            $cardContentTitle,
-            "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen
-            short ribs flank chuck cupim turducken shoulder t-bone.",
-            "/public/about-under.jpg",
-            "#"
-        )
+        - $index = 0;
+        while ($index < count($cards->cards))
+            +card(
+                $index + 1,
+                $cards->cards[$index]->title,
+                $cards->cards[$index]->content,
+                $cards->cards[$index]->image,
+                $cards->cards[$index]->link
+            )
+            - $index++

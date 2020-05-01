@@ -1357,7 +1357,6 @@ __webpack_require__.r(__webpack_exports__);
 var loadingElm = document.getElementById("loading");
  // setTimeout(() => {
 //   loadingElm.remove();
-//   console.log("fixu");
 
 Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])(); // }, 6400);
 

@@ -1,0 +1,28 @@
+{
+  "title": ["Faceți", "alegerea", "potrivită"],
+  "content": [
+    {
+      "title": "Cadou virtual",
+      "list": [
+        "Vei primi un cod",
+        "Se trimite instant pe mail",
+        "Cuprinde toate informațiile necesare",
+        "Cost scăzut",
+        "Nu necesită transport"
+      ],
+      "link": "#"
+    },
+    {
+      "title": "Cadou fizic",
+      "list": [
+        "Include beneficiile cadoului virtual",
+        "Cutie de cadou",
+        "Voucher fizic",
+        "Mesaj unic",
+        "Transport inclus până la client"
+      ],
+      "link": "#"
+    }
+  ],
+  "button": "Comandă acum"
+}

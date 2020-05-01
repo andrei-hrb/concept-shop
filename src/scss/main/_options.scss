@@ -81,6 +81,7 @@
   }
 
   &::before {
+    content: var(--title);
     position: absolute;
     top: -0.85%;
     left: 59%;
@@ -115,10 +116,6 @@
       }
     }
 
-    &::before {
-      content: "Cadou Virtual";
-    }
-
     & .button {
       &>div:first-of-type {
         color: $white !important;
@@ -151,7 +148,6 @@
     }
 
     &::before {
-      content: "Cadou Fizic";
       left: 102.5%;
     }
   }

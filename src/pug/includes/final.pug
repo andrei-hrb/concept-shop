@@ -3,11 +3,8 @@ include components/title
 section#final.final
     div.final__container
         div.final__title-wrapper(style="--index: 1")
-            - $finalTitleContent = ["Nu mai aștepta ocazia perfectă sau un moment anume"]
-            +title("final", $finalTitleContent, "left")
+            +title("final", $final->title->one, "left")
         div.final__title-wrapper(style="--index: 2")
-            - $finalTitleContent = ["Comandă acum cadoul ideal și original"]
-            +title("final", $finalTitleContent, "right")
+            +title("final", $final->title->two, "right")
         div.final__title-wrapper(style="--index: 3")
-            - $finalTitleContent = ["Sigur îți vrei surprinde persoanele dragi"]
-            +title("final", $finalTitleContent, "left")
+            +title("final", $final->title->three, "left")

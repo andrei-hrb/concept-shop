@@ -661,7 +661,6 @@ section {
 
 .loading-logo {
   z-index: 2001;
-  background-image: url("/logo.png");
   background-size: contain;
   width: calc(20rem * 0.8205);
   height: 20rem;
@@ -726,7 +725,6 @@ section {
   height: 100%;
   background-size: cover;
   background-position: right;
-  background-image: url("/public/heading.png");
   transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
   animation: filter-bg 1.5s;
   animation-delay: 0.5s;
@@ -926,7 +924,6 @@ section {
 .about__image-under-bg {
   z-index: 0;
   background-position: bottom;
-  background-image: url("/public/about-under.jpg");
   transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
   animation: filter-bg 1.5s;
   animation-delay: 1.5s;
@@ -963,7 +960,6 @@ section {
 .about__image-over-bg {
   z-index: 4;
   background-position: left;
-  background-image: url("/public/about-over.jpg");
   transition: filter 1.3s cubic-bezier(0.4, 0, 0, 1);
   animation: filter-bg 1.5s;
   animation-delay: 1s;
@@ -1144,7 +1140,6 @@ section {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("/public/intro.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1864,6 +1859,7 @@ section {
 }
 
 .option::before {
+  content: var(--title);
   position: absolute;
   top: -0.85%;
   left: 59%;
@@ -1893,10 +1889,6 @@ section {
   color: #f2f2f2;
 }
 
-#option-1::before {
-  content: "Cadou Virtual";
-}
-
 #option-1 .button > div:first-of-type {
   color: #f2f2f2 !important;
   border: #f2f2f2 solid 1px;
@@ -1923,7 +1915,6 @@ section {
 }
 
 #option-2::before {
-  content: "Cadou Fizic";
   left: 102.5%;
 }
 

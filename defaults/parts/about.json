@@ -1,0 +1,8 @@
+{
+  "title": ["Noi suntem", "Creangă SPA"],
+  "content": "Un SPA într-un orășel de munte, cu priveliști excepționale ce oferă servicii de relaxare deosebite.",
+  "image": {
+    "under": "/public/about-under.jpg",
+    "over": "/public/about-over.jpg"
+  }
+}

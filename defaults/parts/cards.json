@@ -1,0 +1,42 @@
+{
+  "title": "Alege dintr-o gamă de peste 40 de modalități de relaxare",
+  "cards": [
+    {
+      "title": ["1.", "Intrări la SPA", "cu cele 9", "facilități incluse"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    },
+    {
+      "title": ["2.", "Masaje sau", "terapii unice"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    },
+    {
+      "title": ["3.", "Pachete combinate", "faciale"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    },
+    {
+      "title": ["4.", "Pachete combinate", "de remodelare", "corporală"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    },
+    {
+      "title": ["5.", "Pachete pentru", "amelioarera", "durerilor"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    },
+    {
+      "title": ["6.", "Terapii combinate", "cu apă"],
+      "content": "Spicy jalapeno bacon ipsum dolor amet tail swine strip steak, beef ribs buffalo burgdoggen short ribs flank chuck cupim turducken shoulder t-bone.",
+      "image": "/public/about-under.jpg",
+      "link": "#"
+    }
+  ],
+  "button": "Apasă aici"
+}

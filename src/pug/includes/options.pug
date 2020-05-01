@@ -2,10 +2,12 @@ include components/title
 include components/content
 include components/button
 
-mixin option($optionList, $buttonURL, $index)
+- $index = 0;
+mixin option($title, $optionList, $buttonURL)
+    - $index = $index + 1;
     div.option(
         id="option-" . $index
-        style="--option: " . ($index - 1)
+        style="--option: " . ($index - 1) . "; --title: '" . $title . "';"
     )
         div.option__text
             ul.option__list
@@ -14,13 +16,18 @@ mixin option($optionList, $buttonURL, $index)
                     li.option__list-item(style="--index: " . $i)
                         +content("option", $optionList[$i], $i)
                         - $i++
-            +button("option", "Comandă acum", $buttonURL)
+            +button("option", $options->button, $buttonURL)
 
 
 section#options.options
-    - $optionTitleContent = ["Faceți", "alegerea", "potrivită"]
-    +title("option", $optionTitleContent, "main")
-    - $optionListContent = ["Vei primi un cod", "Se trimite instant pe mail", "Cuprinde toate informațiile necesare", "Cost scăzut", "Nu necesită transport"] 
-    +option($optionListContent, "#", 1)
-    - $optionListContent = ["Include beneficiile cadoului virtual", "Cutie de cadou", "Voucher fizic", "Mesaj unic", "Transport inclus până la client"]
-    +option($optionListContent, "#", 2)
+    +title("option", $options->title, "main")
+    +option(
+        $options->content[0]->title, 
+        $options->content[0]->list, 
+        $options->content[0]->link
+    )
+    +option(
+        $options->content[1]->title, 
+        $options->content[1]->list, 
+        $options->content[1]->link
+    )
