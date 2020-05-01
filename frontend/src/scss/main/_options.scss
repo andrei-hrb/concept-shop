@@ -14,8 +14,7 @@
   padding-bottom: 4rem;
   margin-top: 34rem;
   transition: 0.3s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-  0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 5px 5px 10px 10px;
   position: relative;
   display: flex;
@@ -54,7 +53,7 @@
   }
 
   &__list {
-    list-style-image: url(/public/list.png);
+    list-style-image: url("/frontend/public/list.png");
 
     &-item {
       & .content {
@@ -66,7 +65,10 @@
   &__content {
     & .word {
       transition: 0.3s;
-      animation-delay: calc(2.8s + var(--index) * 0.5s + 0.05s * var(--word-index) + 3.5s * var(--option));
+      animation-delay: calc(
+        2.8s + var(--index) * 0.5s + 0.05s * var(--word-index) + 3.5s *
+          var(--option)
+      );
     }
   }
 
@@ -117,12 +119,12 @@
     }
 
     & .button {
-      &>div:first-of-type {
+      & > div:first-of-type {
         color: $white !important;
         border: $white solid 1px;
       }
 
-      &>div:last-of-type {
+      & > div:last-of-type {
         background-color: $white;
 
         & a {

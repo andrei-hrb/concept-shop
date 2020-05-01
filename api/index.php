@@ -7,13 +7,14 @@ include_once 'includes/checkIfPartExists.php';
 class CasaCreangaAPI
 {
 
-    public function displayPart($part)
+    public function displayEditable()
     {
-        checkIfPartExists($part);
-        $content = new scanJSONFromFolder('/defaults/');
+        $content = new scanJSONFromFolder('/api/defaults/');
         $content = $content->getContent();
+        $content["editable"] = isset($_GET["editable"]);
+        $content["noloading"] = !isset($_GET["noloading"]);
 
         $pug = pugInit();
-        $pug->displayFile($_SERVER['DOCUMENT_ROOT'] . "/src/pug/includes/$part.pug", $content);
+        $pug->displayFile($_SERVER['DOCUMENT_ROOT'] . "/frontend/src/pug/index.pug", $content);
     }
 }

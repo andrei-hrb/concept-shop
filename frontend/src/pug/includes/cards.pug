@@ -1,19 +1,23 @@
 include components/title
 include components/button
 
-mixin card($index, $title, $content, $img, $buttonURL)
+mixin card($index, $title, $content, $img, $buttonURL, $editable)
     - $classes = ["card", "card-" . ($index % 2 ? "left" : "right")];
     article(
         class=$classes
         id="card-" . $index
+        data-editable=$editable
     )
         div.card__image-wrapper.card__image-wrapper
-            span.card__image-bg.vertical-bg(style="background-image: url(" . $img . ");")
+            span.card__image-bg.vertical-bg(
+                style="background-image: url(" . $img . ");"
+                data-editable=($editable ? $editable . "imagine" : null))
+            )
             span.card__image-overlay
         div.card__text
-            +title("card", $title, $index)
-            +content("card", $content, $index)
-            +button("card", $cards->button, $buttonURL)
+            +title("card", $title, $index, ($editable ? $editable . "title" : null))
+            +content("card", $content, $index, ($editable ? $editable . "content" : null))
+            +button("card", $cards->button, $buttonURL, ($editable ? $editable . "link" : null))
 
 
 section#cards.cards
@@ -22,6 +26,7 @@ section#cards.cards
         h3(
             id="cards__title" 
             class=$classes
+            data-editable=$editable ? "cards.title" : null
         )
             span.line=$cards->title
     div.cards__container
@@ -32,6 +37,7 @@ section#cards.cards
                 $cards->cards[$index]->title,
                 $cards->cards[$index]->content,
                 $cards->cards[$index]->image,
-                $cards->cards[$index]->link
+                $cards->cards[$index]->link,
+                ($editable ? "cards.cards.[" . $index . "]." : null)
             )
             - $index++

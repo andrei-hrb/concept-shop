@@ -1356,10 +1356,16 @@ __webpack_require__.r(__webpack_exports__);
  * Fancy Loading effect
  */
 var loadingElm = document.getElementById("loading");
- // setTimeout(() => {
-//   loadingElm.remove();
 
-Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])(); // }, 6400);
+
+if (window.location.search.includes("noloading")) {
+  Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])();
+} else {
+  setTimeout(function () {
+    loadingElm.remove();
+    Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  }, 6400);
+}
 
 /***/ }),
 

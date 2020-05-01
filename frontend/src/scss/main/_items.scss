@@ -20,11 +20,11 @@
     }
 
     &__row {
-      &>* {
+      & > * {
         animation-play-state: paused !important;
       }
 
-      &.start>* {
+      &.start > * {
         animation-play-state: running !important;
       }
     }
@@ -76,7 +76,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        background-image: url("/public/lotus.png");
+        background-image: url("/frontend/public/lotus.png");
         background-size: 52px;
         background-position: center;
         background-repeat: no-repeat;
@@ -179,7 +179,6 @@
 }
 
 #item- {
-
   &1,
   &3 {
     transform: translate3d(-100%, 0, 0);
@@ -214,7 +213,6 @@
       }
 
       &__list {
-
         &::before,
         &::after {
           display: none;

@@ -3,7 +3,7 @@ include components/button
 
 - $right = false
 - $index = 0
-mixin item($img, $title, $price, $link)
+mixin item($img, $title, $price, $link, $editable)
     - $classes = ["item"];
     - $classes[] = ($right ? "item-right" : "item-left");
     - $right = !$right;
@@ -11,6 +11,7 @@ mixin item($img, $title, $price, $link)
     div(
         class=$classes
         id="item-" . $index
+        data-editable=$editable
     )
         div.item__image
             span.item__image-bg(style="background-image: url(" . $img . ");")
@@ -22,33 +23,37 @@ mixin item($img, $title, $price, $link)
 
 
 section#items.items
-    +title("items", $items->title, "")
+    +title("items", $items->title, "", $editable ? "items.title" : null)
     div.items__list
         div#items__row-1.items__row
             +item(
                 $items->content[0]->image, 
                 $items->content[0]->title, 
                 $items->content[0]->price, 
-                $items->content[0]->link
+                $items->content[0]->link,
+                ($editable ? "items.content[0]" : null)
             )
             +item(
                 $items->content[1]->image, 
                 $items->content[1]->title, 
                 $items->content[1]->price, 
-                $items->content[1]->link
+                $items->content[1]->link,
+                ($editable ? "items.content[1]" : null)
             )
         div#items__row-2.items__row
             +item(
                 $items->content[2]->image, 
                 $items->content[2]->title, 
                 $items->content[2]->price, 
-                $items->content[2]->link
+                $items->content[2]->link,
+                ($editable ? "items.content[2]" : null)
             )
             +item(
                 $items->content[3]->image, 
                 $items->content[3]->title, 
                 $items->content[3]->price, 
-                $items->content[3]->link
+                $items->content[3]->link,
+                ($editable ? "items.content[3]" : null)
             )
         div#items__lotus.items__lotus
             span.items__lotus-bg

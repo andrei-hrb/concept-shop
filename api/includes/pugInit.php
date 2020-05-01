@@ -2,11 +2,11 @@
 
 function pugInit()
 {
-    include_once 'vendor/autoload.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/api/vendor/autoload.php';
 
     return new Pug([
         'pretty' => true,
         'expressionLanguage' => 'php',
-        'cache' => __DIR__ . '/cache/pug'
+        'cache' => $_SERVER['DOCUMENT_ROOT'] . '/api/cache/pug'
     ]);
 }

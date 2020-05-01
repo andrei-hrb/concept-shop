@@ -3,13 +3,14 @@ include components/content
 
 section#about.about
     span#about__rotating.about__rotating.rotating
-    +title("about", $about->title, "")
+    +title("about", $about->title, "", $editable ? "about.title" : null)
     div.about__content-wrapper
-        +content("about", $about->content, "")
+        +content("about", $about->content, "", $editable ? "about.content" : null)
     div.about__image-wrapper.about__image-under-wrapper
         div.about__image.about__image-under
             span.about__image-bg.about__image-under-bg.vertical-bg(
                 style="background-image: url('" . $about->image->under . "');"
+                data-editable=$editable ? "about.image.under" : null
             )
             +title("about", $about->title, "under")
             +content("about", $about->content, "under")
@@ -18,5 +19,6 @@ section#about.about
         div.about__image.about__image-over
             span.about__image-bg.about__image-over-bg.horizontal-bg(
                 style="background-image: url('" . $about->image->over . "');"
+                data-editable=$editable ? "about.image.over" : null
             )
             span#about__image-over-overlay.about__image-over-overlay

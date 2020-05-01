@@ -8,7 +8,7 @@
     top: -7rem;
     right: 12rem;
     display: block;
-    background-image: url("/public/circle.png");
+    background-image: url("/frontend/public/circle.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 12rem;
@@ -118,7 +118,6 @@
   }
 
   &__title {
-
     &,
     &-under {
       width: 80rem;
@@ -137,9 +136,7 @@
     }
 
     & .word {
-      animation-delay: calc(2.5s
-          /* from bg */
-          + 80ms * var(--word-index));
+      animation-delay: calc(2.5s /* from bg */ + 80ms * var(--word-index));
     }
   }
 
@@ -191,7 +188,6 @@
 
     &__image {
       &-under {
-
         &-bg,
         &-overlay {
           display: none;

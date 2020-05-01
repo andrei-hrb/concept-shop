@@ -5,10 +5,13 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap")
-        link(rel="stylesheet", href="/dist/style.css")
-    body
+        link(rel="stylesheet", href="/frontend/dist/style.css")
+    body(
+        class=$editable ? "editable" : ""
+    )
         main
-            //- include includes/loading
+            if ($noloading)
+                include includes/loading
             include includes/heading
             include includes/about
             include includes/intro
@@ -16,4 +19,4 @@ html(lang="en")
             include includes/items
             include includes/options
             include includes/final
-        script(src="/dist/script.js")
+        script(src="/frontend/dist/script.js")

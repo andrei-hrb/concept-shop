@@ -25,7 +25,7 @@ class scanJSONFromFolder
             $fileContent = json_decode(
                 str_replace(
                     '/public',
-                    getAbsoluteURI('/public'),
+                    getAbsoluteURI('/frontend/public'),
                     file_get_contents($_SERVER['DOCUMENT_ROOT'] . $this->dir . $file)
                 )
             );
@@ -39,10 +39,5 @@ class scanJSONFromFolder
         $this->setContent();
 
         return $this->content;
-    }
-
-    public function getFiles()
-    {
-        return $this->dirc;
     }
 }

@@ -5,9 +5,10 @@ section#heading.heading
     div.heading__image
         span#heading__image-bg.heading__image-bg(
             style="background-image: url('" . $heading->image . "');"
+            data-editable=$editable ? "heading.image" : null
         )
         span#heading__image-overlay.heading__image-overlay
-        +title("heading", $heading->title, "over")
-    +title("heading", $heading->title, "under")
+        +title("heading", $heading->title, "over", $editable ? "heading.title" : null)
+    +title("heading", $heading->title, "under", $editable ? "heading.title" : null)
     div.heading__content-wrapper
-        +content("heading", $heading->content, "")
+        +content("heading", $heading->content, "", $editable ? "heading.content" : null)

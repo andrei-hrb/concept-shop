@@ -1,10 +1,11 @@
-mixin title($section, $content, $special)
+mixin title($section, $content, $special, $editable)
     - $id = $section . "__title" . ($special !== "" ? "-" . $special : "");
     - $classes = ["title", $section . "__title", "vertical-text", ($special !== "") ? $section . "__title-" . $special : ""];
     h3(
         id=$id
         class=$classes
         data-splitting="words"
+        data-editable=$editable
     )
         - $i = 0;
         while ($i < count($content))
