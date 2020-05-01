@@ -1,3 +1,0 @@
-#!/bin/bash
-
-pug src/pug/index.pug >/dev/null; mv src/pug/index.html index.html && osascript -e 'display notification "Pug compiling done 💪🐶!" with title "puggify" sound name "Bark"' && echo 'Done!'

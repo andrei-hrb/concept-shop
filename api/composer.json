@@ -1,0 +1,14 @@
+{
+  "name": "hirbu/casa-creanga-shop",
+  "description": "private",
+  "type": "project",
+  "require": {
+    "pug-php/pug": "^3.4"
+  },
+  "authors": [
+    {
+      "name": "Hirbu Andrei",
+      "email": "hirbu.z@gmail.com"
+    }
+  ]
+}

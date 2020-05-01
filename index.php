@@ -1,14 +1,22 @@
 <?php
 
-include 'vendor/autoload.php';
-include 'defaults/index.php';
+include_once "api/index.php";
 
-$pug = new Pug([
-    'pretty' => true,
-    'expressionLanguage' => 'php',
-    'cache' => __DIR__ . '/cache/pug'
-]);
+$ccapi = new CasaCreangaAPI();
 
-$defaults = new Defaults();
+echo $ccapi->displayPart('heading');
 
-$pug->displayFile('src/pug/index.pug', $defaults->getDefaults());
+// include 'vendor/autoload.php';
+
+// $pug = new Pug([
+//     'pretty' => true,
+//     'expressionLanguage' => 'php',
+//     'cache' => __DIR__ . '/cache/pug'
+// ]);
+
+// $defaults = new scanJSONFromFolder('/defaults/');
+// $overwrites = new scanJSONFromFolder('/cache/overwrites/');
+
+// $content = array_replace($defaults->getContent(), $overwrites->getContent());
+
+// $pug->displayFile('src/pug/index.pug', $content);

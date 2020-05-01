@@ -6,7 +6,7 @@ mix
   .options({
     autoprefixer: {
       options: {
-        browsers: ["last 6 versions"]
-      }
-    }
+        browsers: ["last 6 versions"],
+      },
+    },
   });
