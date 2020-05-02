@@ -3,7 +3,7 @@ include components/content
 include components/button
 
 - $index = 0;
-mixin option($title, $optionList, $buttonURL, $editable)
+mixin option($title, $optionList, $buttonURL, $editable, $position)
     - $index = $index + 1;
     div.option(
         id="option-" . $index
@@ -12,14 +12,16 @@ mixin option($title, $optionList, $buttonURL, $editable)
     )
         div.option__text
             ul.option__list(
+                id=("option__list-" . $position)
                 data-editable=($editable ? $editable . "list" : null)
+                data-count=(count($optionList))
             )
                 - $i = 0
                 while $i < count($optionList)
                     li.option__list-item(style="--index: " . $i)
-                        +content("option", $optionList[$i], $i)
+                        +content("option", $optionList[$i], $i . '-' . $position)
                         - $i++
-            +button("option", $options->button, $buttonURL, ($editable ? $editable . "button" : null))
+            +button("option", $options->button, $buttonURL, ($editable ? "options.button" : null))
 
 
 section#options.options
@@ -28,11 +30,13 @@ section#options.options
         $options->content[0]->title, 
         $options->content[0]->list, 
         $options->content[0]->link,
-        ($editable ? "options.content[0]." : null)
+        ($editable ? "options.content[0]." : null),
+        "left"
     )
     +option(
         $options->content[1]->title, 
         $options->content[1]->list, 
         $options->content[1]->link,
-        ($editable ? "options.content[1]." : null)
+        ($editable ? "options.content[1]." : null),
+        "right"
     )

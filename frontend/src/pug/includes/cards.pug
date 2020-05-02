@@ -9,19 +9,21 @@ mixin card($index, $title, $content, $img, $buttonURL, $editable)
         data-editable=$editable
     )
         div.card__image-wrapper.card__image-wrapper(
-                data-editable=($editable ? $editable . "imagine" : null)
+                data-editable=($editable ? $editable . ".imagine" : null)
         )
             span.card__image-bg.vertical-bg(
                 style="background-image: url(" . $img . ");"
             )
             span.card__image-overlay
         div.card__text
-            +title("card", $title, $index, ($editable ? $editable . "title" : null))
-            +content("card", $content, $index, ($editable ? $editable . "content" : null))
-            +button("card", $cards->button, $buttonURL, ($editable ? $editable . "link" : null))
+            +title("card", $title, $index, ($editable ? $editable . ".title" : null))
+            +content("card", $content, $index, ($editable ? $editable . ".content" : null))
+            +button("card", $cards->button, $buttonURL, ($editable ? $editable . ".link" : null))
 
 
-section#cards.cards
+section#cards.cards(
+    data-count=(count($cards->cards))
+)
     div.cards__title-wrapper
         - $classes = ["title", "cards__title", "horizontal-text"];
         h3(
@@ -39,6 +41,6 @@ section#cards.cards
                 $cards->cards[$index]->content,
                 $cards->cards[$index]->image,
                 $cards->cards[$index]->link,
-                ($editable ? "cards.cards.[" . $index . "]." : null)
+                ($editable ? "cards.cards.[" . $index . "]" : null)
             )
             - $index++

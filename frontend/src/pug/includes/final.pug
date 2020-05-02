@@ -3,8 +3,8 @@ include components/title
 section#final.final
     div.final__container
         div.final__title-wrapper(style="--index: 1")
-            +title("final", $final->title->one, "left", $editable ? "final.title.[0]" : null)
+            +title("final", $final->title->one, "left", $editable ? "final.title.one" : null)
         div.final__title-wrapper(style="--index: 2")
-            +title("final", $final->title->two, "right", $editable ? "final.title.[1]" : null)
+            +title("final", $final->title->two, "right", $editable ? "final.title.two" : null)
         div.final__title-wrapper(style="--index: 3")
-            +title("final", $final->title->three, "left", $editable ? "final.title.[2]" : null)
+            +title("final", $final->title->three, "left", $editable ? "final.title.three" : null)

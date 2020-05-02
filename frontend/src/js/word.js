@@ -12,6 +12,10 @@ const watchedElements = [
 
   "items__title",
 
+  "option__title-main",
+
+  "items__title",
+
   /* Content */
 
   "heading__content",
@@ -21,12 +25,25 @@ const watchedElements = [
 
   "intro__content",
 ];
-for (let i = 1; i <= 6; i++) {
+const cards_list = document.getElementById("cards").dataset.count;
+for (let i = 1; i <= cards_list; i++) {
   watchedElements.push("card__title-" + i);
   watchedElements.push("card__content-" + i);
 }
+
 for (let i = 1; i <= 4; i++) {
   watchedElements.push("item__title-" + i + "__product");
+}
+
+const op_list_right = document.getElementById("option__list-right").dataset
+  .count;
+for (let i = 0; i < op_list_right; i++) {
+  watchedElements.push("option__content-" + i + "-right");
+}
+const op_list_left = document.getElementById("option__list-right").dataset
+  .count;
+for (let i = 0; i < op_list_left; i++) {
+  watchedElements.push("option__content-" + i + "-left");
 }
 
 function handler(e) {

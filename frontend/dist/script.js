@@ -1496,17 +1496,30 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var watchedElements = ["heading__title-over", "heading__title-under", "about__title", "about__title-under", "intro__title-over", "intro__title-over-mobile", "intro__title-under", "intro__title-under-mobile", "items__title",
+var watchedElements = ["heading__title-over", "heading__title-under", "about__title", "about__title-under", "intro__title-over", "intro__title-over-mobile", "intro__title-under", "intro__title-under-mobile", "items__title", "option__title-main", "items__title",
 /* Content */
 "heading__content", "about__content", "about__content-under", "intro__content"];
+var cards_list = document.getElementById("cards").dataset.count;
 
-for (var i = 1; i <= 6; i++) {
+for (var i = 1; i <= cards_list; i++) {
   watchedElements.push("card__title-" + i);
   watchedElements.push("card__content-" + i);
 }
 
 for (var _i = 1; _i <= 4; _i++) {
   watchedElements.push("item__title-" + _i + "__product");
+}
+
+var op_list_right = document.getElementById("option__list-right").dataset.count;
+
+for (var _i2 = 0; _i2 < op_list_right; _i2++) {
+  watchedElements.push("option__content-" + _i2 + "-right");
+}
+
+var op_list_left = document.getElementById("option__list-right").dataset.count;
+
+for (var _i3 = 0; _i3 < op_list_left; _i3++) {
+  watchedElements.push("option__content-" + _i3 + "-left");
 }
 
 function handler(e) {

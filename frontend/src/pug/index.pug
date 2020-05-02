@@ -21,6 +21,8 @@ html(lang="en")
             include includes/items
             include includes/options
             include includes/final
+            - if ($editable)
+                div#json(style="display: none")!=$json
         script(src="/frontend/dist/script.js")
         - if ($editable && $assets["js"])
             script!=$assets["js"]
