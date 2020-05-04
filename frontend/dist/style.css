@@ -880,7 +880,6 @@ section {
   top: -7rem;
   right: 12rem;
   display: block;
-  background-image: url("/frontend/public/circle.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 12rem;

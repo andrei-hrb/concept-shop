@@ -4,5 +4,6 @@
   "image": {
     "under": "/public/about-under.jpg",
     "over": "/public/about-over.jpg"
-  }
+  },
+  "rotating": "/public/circle.png"
 }

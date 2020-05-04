@@ -1,53 +1,98 @@
-let timer = true;
-function observerCallback(mutationsList) {
-  for (let mutation of mutationsList) {
-    if (mutation.attributeName === "data-focused" && timer) {
-      timer = false;
-      setTimeout(() => {
-        timer = true;
-      }, 50);
+const defaultData = JSON.parse(
+  document.getElementById("json-default").textContent
+);
+const overwriteData = JSON.parse(
+  document.getElementById("json-overwrite").textContent
+);
+const dbData = JSON.parse(document.getElementById("json-db").textContent);
 
-      mutation.newValue = document.body.dataset.focused;
+const edit = document.createElement("div");
+edit.id = "edit";
+edit.classList.add("edit");
+edit.innerHTML = `
+  <div class="edit-body">
+    <span class="edit-close">×</span>
+    <h3 class="edit-title"></h3>
+    <div class="edit-content"></div>
+  </div>
+`;
 
-      if (mutation.oldValue !== mutation.newValue) {
-        elms.forEach((elm) => {
-          if (elm.dataset.editable === mutation.oldValue) {
-            elm.classList.remove("focused");
-            elm.classList.remove("edited");
-          }
+document.body.appendChild(edit);
 
-          if (elm.dataset.editable == mutation.newValue) {
-            elm.classList.add("focused");
-          }
-        });
-      } else {
-        elms.forEach((elm) => {
-          if (elm.dataset.editable === mutation.oldValue) {
-            elm.classList.add("edited");
-          }
-        });
-      }
-    }
-  }
-}
-const observer = new MutationObserver(observerCallback);
-const config = { attributes: true, attributeOldValue: true };
-observer.observe(document.body, config);
+document.body.addEventListener("open-editor", (e) => {
+  const title = e.detail.editable
+    .split(".")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  const data = Object.byString(defaultData, e.detail.editable);
+  const form = getHTMLForEditor(e.detail.editable, data);
 
-const elms = document.querySelectorAll("[data-editable]");
-elms.forEach((elm) => {
-  elm.classList.add("editable");
-  elm.addEventListener("click", focusedHandler);
+  document.querySelector(".edit-title").textContent = title;
+  document.querySelector(".edit-title").title = e.detail.editable;
+  document.querySelector(".edit-content").appendChild(form);
+  document.querySelector(".edit").classList.add("visible");
 });
 
-function focusedHandler(e) {
-  document.body.dataset.focused = e.target.closest(
-    ".editable"
-  ).dataset.editable;
-}
+document.querySelector(".edit-close").addEventListener("click", () => {
+  document.querySelector("#edit").classList.remove("visible");
 
-const data = JSON.parse(document.getElementById("json").textContent);
-function openDialog(e) {
-  const lelm = e.target.closest(".editable");
-  console.log(lelm);
-}
+  const editable = document.body.dataset.focused;
+  if (editable.includes("title")) {
+    if (editable.includes("intro")) {
+      const datad = document.querySelector(".editor-textad").value;
+      let elms = [
+        document.querySelector("#intro__title-over"),
+        document.querySelector("#intro__title-under"),
+      ];
+      elms.forEach((elm) => {
+        elm.innerHTML = "";
+        datad.split("\n").forEach((line) => {
+          const span = document.createElement("span");
+          span.classList.add("line");
+          span.textContent = line;
+
+          elm.appendChild(span);
+        });
+      });
+
+      const datam = document.querySelector(".editor-textam").value;
+      elms = [
+        document.querySelector("#intro__title-over-mobile"),
+        document.querySelector("#intro__title-under-mobile"),
+      ];
+      elms.forEach((elm) => {
+        elm.innerHTML = "";
+        datam.split("\n").forEach((line) => {
+          const span = document.createElement("span");
+          span.classList.add("line");
+          span.textContent = line;
+
+          elm.appendChild(span);
+        });
+      });
+    } else if (editable.includes("cards") && !editable.includes("[")) {
+      const data = document.querySelector(".editor-texta").value;
+      const elm = document.querySelector(`[data-editable="${editable}"]`);
+
+      elm.textContent = data;
+    } else {
+      const data = document.querySelector(".editor-texta").value;
+      const elms = document.querySelectorAll(`[data-editable="${editable}"]`);
+      elms.forEach((elm) => {
+        elm.innerHTML = "";
+        data.split("\n").forEach((line) => {
+          const span = document.createElement("span");
+          span.classList.add("line");
+          span.textContent = line;
+
+          elm.appendChild(span);
+        });
+      });
+    }
+  }
+
+  document.querySelector(".edit-content").innerHTML = "";
+  elms.forEach((elm) => {
+    elm.classList.remove("edited");
+  });
+});

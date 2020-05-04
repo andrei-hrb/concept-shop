@@ -2,7 +2,10 @@ include components/title
 include components/content
 
 section#about.about
-    span#about__rotating.about__rotating.rotating
+    span#about__rotating.about__rotating.rotating(
+        data-editable="about.rotating"
+        style="background-image: url('" . $about->rotating . "');"
+    )
     +title("about", $about->title, "", $editable ? "about.title" : null)
     div.about__content-wrapper
         +content("about", $about->content, "", $editable ? "about.content" : null)

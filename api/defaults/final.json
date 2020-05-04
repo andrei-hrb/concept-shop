@@ -1,7 +1,7 @@
 {
-  "title": {
-    "one": ["Nu mai aștepta ocazia perfectă sau un moment anume"],
-    "two": ["Comandă acum cadoul ideal și original"],
-    "three": ["Sigur îți vrei surprinde persoanele dragi"]
-  }
+  "title": [
+    ["Nu mai aștepta ocazia perfectă sau un moment anume"],
+    ["Comandă acum cadoul ideal și original"],
+    ["Sigur îți vrei surprinde persoanele dragi"]
+  ]
 }

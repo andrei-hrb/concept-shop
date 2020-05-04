@@ -1,5 +1,6 @@
 include components/title
 include components/button
+include components/add
 
 mixin card($index, $title, $content, $img, $buttonURL, $editable)
     - $classes = ["card", "card-" . ($index % 2 ? "left" : "right")];
@@ -9,7 +10,7 @@ mixin card($index, $title, $content, $img, $buttonURL, $editable)
         data-editable=$editable
     )
         div.card__image-wrapper.card__image-wrapper(
-                data-editable=($editable ? $editable . ".imagine" : null)
+                data-editable=($editable ? $editable . ".image" : null)
         )
             span.card__image-bg.vertical-bg(
                 style="background-image: url(" . $img . ");"
@@ -41,6 +42,8 @@ section#cards.cards(
                 $cards->cards[$index]->content,
                 $cards->cards[$index]->image,
                 $cards->cards[$index]->link,
-                ($editable ? "cards.cards.[" . $index . "]" : null)
+                ($editable ? "cards.cards[" . $index . "]" : null)
             )
             - $index++
+        if ($editable)
+            +add("cards")

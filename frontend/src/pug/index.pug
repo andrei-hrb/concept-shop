@@ -22,7 +22,9 @@ html(lang="en")
             include includes/options
             include includes/final
             - if ($editable)
-                div#json(style="display: none")!=$json
+                div#json-default(style="display: none")!=$json["default"]
+                div#json-db(style="display: none")!=$json["database"]
+                div#json-overwrite(style="display: none")!=$json["overwrite"]
         script(src="/frontend/dist/script.js")
         - if ($editable && $assets["js"])
             script!=$assets["js"]
