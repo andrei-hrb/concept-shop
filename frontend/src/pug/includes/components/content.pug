@@ -1,9 +1,0 @@
-mixin content($section, $content, $special, $editable)
-    - $id = $section . "__content" . ($special !== "" ? "-" . $special : "");
-    - $classes = ["content", $section . "__content", "vertical-text", ($special !== "" ? $section . "__content-" . $special : "")];
-    p(
-        id=$id
-        class=$classes
-        data-splitting="words"
-        data-editable=$editable
-    )!=$content

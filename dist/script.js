@@ -1295,14 +1295,14 @@ module.exports = function (css) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _word__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./word */ "./src/js/word.js");
-/* harmony import */ var _word__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_word__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loading */ "./src/js/loading.js");
-/* harmony import */ var _imageEntrance__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./imageEntrance */ "./src/js/imageEntrance.js");
-/* harmony import */ var _imageEntrance__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_imageEntrance__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _startAnimation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./startAnimation */ "./src/js/startAnimation.js");
-/* harmony import */ var _scrolling__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scrolling */ "./src/js/scrolling.js");
-/* harmony import */ var _scrolling__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scrolling__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _reduce_node_word__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reduce-node-word */ "./src/js/reduce-node-word.js");
+/* harmony import */ var _reduce_node_word__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduce_node_word__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _loading_effect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loading-effect */ "./src/js/loading-effect.js");
+/* harmony import */ var _remove_overlays__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./remove-overlays */ "./src/js/remove-overlays.js");
+/* harmony import */ var _remove_overlays__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_remove_overlays__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _start_animation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./start-animation */ "./src/js/start-animation.js");
+/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scroll */ "./src/js/scroll.js");
+/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scroll__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _splitting__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splitting */ "./src/js/splitting.js");
 /**
  * Index file
@@ -1316,41 +1316,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/imageEntrance.js":
-/*!*********************************!*\
-  !*** ./src/js/imageEntrance.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/**
- * Fix image entrace
- */
-var arrayAllImagesIDs = ["heading__image-overlay", "about__image-under-overlay", "about__image-over-overlay"];
-
-function handle(e) {
-  e.target.removeEventListener("animationend", handle);
-  e.target.remove();
-}
-
-arrayAllImagesIDs.map(function (imageID) {
-  return document.getElementById(imageID);
-}).forEach(function (elm) {
-  elm.addEventListener("animationend", handle);
-});
-
-/***/ }),
-
-/***/ "./src/js/loading.js":
-/*!***************************!*\
-  !*** ./src/js/loading.js ***!
-  \***************************/
+/***/ "./src/js/loading-effect.js":
+/*!**********************************!*\
+  !*** ./src/js/loading-effect.js ***!
+  \**********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _startAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./startAnimation */ "./src/js/startAnimation.js");
+/* harmony import */ var _start_animation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./start-animation */ "./src/js/start-animation.js");
 /**
  * Fancy Loading effect
  */
@@ -1358,135 +1333,20 @@ var loadingElm = document.getElementById("loading");
 
 
 if (window.location.search.includes("noloading")) {
-  Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_start_animation__WEBPACK_IMPORTED_MODULE_0__["default"])();
 } else {
   setTimeout(function () {
     loadingElm.remove();
-    Object(_startAnimation__WEBPACK_IMPORTED_MODULE_0__["default"])();
+    Object(_start_animation__WEBPACK_IMPORTED_MODULE_0__["default"])();
   }, 6400);
 }
 
 /***/ }),
 
-/***/ "./src/js/scrolling.js":
-/*!*****************************!*\
-  !*** ./src/js/scrolling.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var watchedElements = ["heading", "about", "intro", "cards"];
-
-for (var i = 1; i <= 6; i++) {
-  watchedElements.push('card-' + i);
-}
-
-watchedElements.map(function (section) {
-  return document.getElementById(section);
-}).forEach(function (section) {
-  section.style.setProperty("--height", section.offsetTop);
-});
-window.addEventListener("scroll", scrollWindowHandler, {
-  passive: true
-});
-
-function scrollWindowHandler() {
-  document.body.style.setProperty("--scrolled", window.scrollY);
-}
-
-scrollWindowHandler();
-
-/***/ }),
-
-/***/ "./src/js/splitting.js":
-/*!*****************************!*\
-  !*** ./src/js/splitting.js ***!
-  \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! splitting/dist/splitting.css */ "./node_modules/splitting/dist/splitting.css");
-/* harmony import */ var splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! splitting/dist/splitting-cells.css */ "./node_modules/splitting/dist/splitting-cells.css");
-/* harmony import */ var splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var splitting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! splitting */ "./node_modules/splitting/dist/splitting.js");
-/* harmony import */ var splitting__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(splitting__WEBPACK_IMPORTED_MODULE_2__);
-/**
- * All the stuff related to Splitting.JS
- *      https://splitting.js.org/
- */
-
-
-
-splitting__WEBPACK_IMPORTED_MODULE_2___default()();
-
-/***/ }),
-
-/***/ "./src/js/startAnimation.js":
-/*!**********************************!*\
-  !*** ./src/js/startAnimation.js ***!
-  \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startAnimation; });
-function startAnimation() {
-  var watchedElements = ["heading", "about", "intro", "items__title", "items__row-1", "items__row-2", "options", "final"];
-
-  for (var i = 1; i <= 6; i++) {
-    watchedElements.push("card-" + i);
-  }
-
-  watchedElements.forEach(function (elm, i) {
-    watchedElements[i] = document.getElementById(elm);
-  });
-  window.addEventListener("scroll", startingAnimationWindowHandler, {
-    passive: true
-  });
-
-  function isInViewport(elm) {
-    var rect = elm.getBoundingClientRect();
-    return rect.top < window.innerHeight - 250 && rect.bottom >= 250;
-  }
-
-  var lotus = 0;
-
-  function startingAnimationWindowHandler() {
-    if (document.getElementById("loading") === null) {
-      watchedElements.forEach(function (elm, i) {
-        if (elm.classList.contains("start")) {
-          watchedElements.splice(i, 1);
-        }
-
-        if (isInViewport(elm)) {
-          elm.classList.add("start");
-          if (elm.classList.contains("items__row")) lotus = lotus + 1;
-          if (lotus == 2) document.getElementById("items__lotus").classList.add("start");
-          watchedElements.splice(i, 1);
-        }
-      });
-
-      if (watchedElements.length === 0) {
-        window.removeEventListener("scroll", startingAnimationWindowHandler, {
-          passive: true
-        });
-      }
-    }
-  }
-
-  startingAnimationWindowHandler();
-}
-
-/***/ }),
-
-/***/ "./src/js/word.js":
-/*!************************!*\
-  !*** ./src/js/word.js ***!
-  \************************/
+/***/ "./src/js/reduce-node-word.js":
+/*!************************************!*\
+  !*** ./src/js/reduce-node-word.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -1566,6 +1426,146 @@ watchedElements.map(function (elm) {
 
 /***/ }),
 
+/***/ "./src/js/remove-overlays.js":
+/*!***********************************!*\
+  !*** ./src/js/remove-overlays.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Fix image entrace
+ */
+var arrayAllImagesIDs = ["heading__image-overlay", "about__image-under-overlay", "about__image-over-overlay"];
+
+function handle(e) {
+  e.target.removeEventListener("animationend", handle);
+  e.target.remove();
+}
+
+arrayAllImagesIDs.map(function (imageID) {
+  return document.getElementById(imageID);
+}).forEach(function (elm) {
+  elm.addEventListener("animationend", handle);
+});
+
+/***/ }),
+
+/***/ "./src/js/scroll.js":
+/*!**************************!*\
+  !*** ./src/js/scroll.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var watchedElements = ["heading", "about", "intro", "cards"];
+
+for (var i = 1; i <= 6; i++) {
+  watchedElements.push('card-' + i);
+}
+
+watchedElements.map(function (section) {
+  return document.getElementById(section);
+}).forEach(function (section) {
+  section.style.setProperty("--height", section.offsetTop);
+});
+window.addEventListener("scroll", scrollWindowHandler, {
+  passive: true
+});
+
+function scrollWindowHandler() {
+  document.body.style.setProperty("--scrolled", window.scrollY);
+}
+
+scrollWindowHandler();
+
+/***/ }),
+
+/***/ "./src/js/splitting.js":
+/*!*****************************!*\
+  !*** ./src/js/splitting.js ***!
+  \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! splitting/dist/splitting.css */ "./node_modules/splitting/dist/splitting.css");
+/* harmony import */ var splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(splitting_dist_splitting_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! splitting/dist/splitting-cells.css */ "./node_modules/splitting/dist/splitting-cells.css");
+/* harmony import */ var splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(splitting_dist_splitting_cells_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var splitting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! splitting */ "./node_modules/splitting/dist/splitting.js");
+/* harmony import */ var splitting__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(splitting__WEBPACK_IMPORTED_MODULE_2__);
+/**
+ * All the stuff related to Splitting.JS
+ *      https://splitting.js.org/
+ */
+
+
+
+splitting__WEBPACK_IMPORTED_MODULE_2___default()();
+
+/***/ }),
+
+/***/ "./src/js/start-animation.js":
+/*!***********************************!*\
+  !*** ./src/js/start-animation.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return startAnimation; });
+function startAnimation() {
+  var watchedElements = ["heading", "about", "intro", "items__title", "items__row-1", "items__row-2", "options", "final"];
+
+  for (var i = 1; i <= 6; i++) {
+    watchedElements.push("card-" + i);
+  }
+
+  watchedElements.forEach(function (elm, i) {
+    watchedElements[i] = document.getElementById(elm);
+  });
+  window.addEventListener("scroll", startingAnimationWindowHandler, {
+    passive: true
+  });
+
+  function isInViewport(elm) {
+    var rect = elm.getBoundingClientRect();
+    return rect.top < window.innerHeight - 250 && rect.bottom >= 250;
+  }
+
+  var lotus = 0;
+
+  function startingAnimationWindowHandler() {
+    if (document.getElementById("loading") === null) {
+      watchedElements.forEach(function (elm, i) {
+        if (elm.classList.contains("start")) {
+          watchedElements.splice(i, 1);
+        }
+
+        if (isInViewport(elm)) {
+          elm.classList.add("start");
+          if (elm.classList.contains("items__row")) lotus = lotus + 1;
+          if (lotus == 2) document.getElementById("items__lotus").classList.add("start");
+          watchedElements.splice(i, 1);
+        }
+      });
+
+      if (watchedElements.length === 0) {
+        window.removeEventListener("scroll", startingAnimationWindowHandler, {
+          passive: true
+        });
+      }
+    }
+  }
+
+  startingAnimationWindowHandler();
+}
+
+/***/ }),
+
 /***/ "./src/scss/app.scss":
 /*!***************************!*\
   !*** ./src/scss/app.scss ***!
@@ -1584,8 +1584,8 @@ watchedElements.map(function (elm) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/frontend/src/js/app.js */"./src/js/app.js");
-module.exports = __webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/frontend/src/scss/app.scss */"./src/scss/app.scss");
+__webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /Users/hirbu/Sites/casa-creanga-shop/src/scss/app.scss */"./src/scss/app.scss");
 
 
 /***/ })

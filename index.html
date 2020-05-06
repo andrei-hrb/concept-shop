@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&amp;display=swap"
+    />
+    <link rel="stylesheet" href="/dist/style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="loading" class="loading start">
+        <span class="loading-first"></span><span class="loading-second"></span
+        ><span
+          class="loading-logo"
+          style="background-image: url('/public/logo.png');"
+        ></span>
+      </section>
+      <section id="heading" class="heading">
+        <div class="heading__image">
+          <span
+            id="heading__image-bg"
+            class="heading__image-bg"
+            style="background-image: url('/public/heading.png');"
+          ></span
+          ><span
+            id="heading__image-overlay"
+            class="heading__image-overlay"
+          ></span>
+          <h3
+            id="heading__title-over"
+            class="title heading__title vertical-text heading__title-over"
+            data-splitting="words"
+          >
+            <span class="line">Relaxare</span
+            ><span class="line">în fiecare</span
+            ><span class="line">moment</span>
+          </h3>
+        </div>
+        <h3
+          id="heading__title-under"
+          class="title heading__title vertical-text heading__title-under"
+          data-splitting="words"
+        >
+          <span class="line">Relaxare</span><span class="line">în fiecare</span
+          ><span class="line">moment</span>
+        </h3>
+        <div class="heading__content-wrapper">
+          <p
+            id="heading__content"
+            class="content heading__content vertical-text"
+            data-splitting="words"
+          >
+            Imaginează-te într-un cadru natural de vis, relaxat, experimentând
+            noi terapii SPA sau înnotând în piscina cristalină a SPA- ului
+            nostru; Lasă-ne să avem grijă de starea ta de bine.
+          </p>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <span
+          id="about__rotating"
+          class="about__rotating rotating"
+          data-editable="about.rotating"
+          style="background-image: url('/public/circle.png');"
+        ></span>
+        <h3
+          id="about__title"
+          class="title about__title vertical-text"
+          data-splitting="words"
+        >
+          <span class="line">Noi suntem</span
+          ><span class="line">Creangă SPA</span>
+        </h3>
+        <div class="about__content-wrapper">
+          <p
+            id="about__content"
+            class="content about__content vertical-text"
+            data-splitting="words"
+          >
+            Un SPA într-un orășel de munte, cu priveliști excepționale ce oferă
+            servicii de relaxare deosebite.
+          </p>
+        </div>
+        <div class="about__image-wrapper about__image-under-wrapper">
+          <div class="about__image about__image-under">
+            <span
+              class="about__image-bg about__image-under-bg vertical-bg"
+              style="background-image: url('/public/about-under.jpg');"
+            ></span>
+            <h3
+              id="about__title-under"
+              class="title about__title vertical-text about__title-under"
+              data-splitting="words"
+            >
+              <span class="line">Noi suntem</span
+              ><span class="line">Creangă SPA</span>
+            </h3>
+            <p
+              id="about__content-under"
+              class="content about__content vertical-text about__content-under"
+              data-splitting="words"
+            >
+              Un SPA într-un orășel de munte, cu priveliști excepționale ce
+              oferă servicii de relaxare deosebite.
+            </p>
+            <span
+              id="about__image-under-overlay"
+              class="about__image-under-overlay"
+            ></span>
+          </div>
+        </div>
+        <div class="about__image-wrapper about__image-over-wrapper">
+          <div class="about__image about__image-over">
+            <span
+              class="about__image-bg about__image-over-bg horizontal-bg"
+              style="background-image: url('/public/about-over.jpg');"
+            ></span
+            ><span
+              id="about__image-over-overlay"
+              class="about__image-over-overlay"
+            ></span>
+          </div>
+        </div>
+      </section>
+      <section id="intro" class="intro">
+        <div class="intro__image-wrapper">
+          <div class="intro__image">
+            <div class="intro__image-container">
+              <span
+                class="intro__image-bg vertical-bg"
+                style="background-image: url('/public/intro.jpg');"
+              ></span>
+              <h3
+                id="intro__title-under"
+                class="title intro__title vertical-text intro__title-under"
+                data-splitting="words"
+              >
+                <span class="line">Aici venim să vă</span
+                ><span class="line">prezentăm noul</span
+                ><span class="line">concept SPA GIFT</span>
+              </h3>
+              <h3
+                id="intro__title-under-mobile"
+                class="title intro__title vertical-text intro__title-under-mobile"
+                data-splitting="words"
+              >
+                <span class="line">Aici venim</span
+                ><span class="line">să vă</span
+                ><span class="line">prezentăm</span
+                ><span class="line">noul</span><span class="line">concept</span
+                ><span class="line">SPA GIFT</span>
+              </h3>
+            </div>
+            <span id="intro__image-overlay" class="intro__image-overlay"
+              ><span class="intro__image-overlay-deg"></span
+            ></span>
+          </div>
+        </div>
+        <h3
+          id="intro__title-over"
+          class="title intro__title vertical-text intro__title-over"
+          data-splitting="words"
+        >
+          <span class="line">Aici venim să vă</span
+          ><span class="line">prezentăm noul</span
+          ><span class="line">concept SPA GIFT</span>
+        </h3>
+        <h3
+          id="intro__title-over-mobile"
+          class="title intro__title vertical-text intro__title-over-mobile"
+          data-splitting="words"
+        >
+          <span class="line">Aici venim</span><span class="line">să vă</span
+          ><span class="line">prezentăm</span><span class="line">noul</span
+          ><span class="line">concept</span><span class="line">SPA GIFT</span>
+        </h3>
+        <p
+          id="intro__content"
+          class="content intro__content vertical-text"
+          data-splitting="words"
+        >
+          Decide să oferi celor dragi cadouri originale - Cumpăra-le un voucher
+          cadou la SPA și fii sigur că nu-l vor uita niciodată.
+        </p>
+      </section>
+      <section id="cards" class="cards" data-count="6">
+        <div class="cards__title-wrapper">
+          <h3 id="cards__title" class="title cards__title horizontal-text">
+            <span class="line"
+              >Alege dintr-o gamă de peste 40 de modalități de relaxare</span
+            >
+          </h3>
+        </div>
+        <div class="cards__container">
+          <article class="card card-left" id="card-1">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-1"
+                class="title card__title vertical-text card__title-1"
+                data-splitting="words"
+              >
+                <span class="line">1.</span
+                ><span class="line">Intrări la SPA</span
+                ><span class="line">cu cele 9</span
+                ><span class="line">facilități incluse</span>
+              </h3>
+              <p
+                id="card__content-1"
+                class="content card__content vertical-text card__content-1"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-right" id="card-2">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-2"
+                class="title card__title vertical-text card__title-2"
+                data-splitting="words"
+              >
+                <span class="line">2.</span><span class="line">Masaje sau</span
+                ><span class="line">terapii unice</span>
+              </h3>
+              <p
+                id="card__content-2"
+                class="content card__content vertical-text card__content-2"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-left" id="card-3">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-3"
+                class="title card__title vertical-text card__title-3"
+                data-splitting="words"
+              >
+                <span class="line">3.</span
+                ><span class="line">Pachete combinate</span
+                ><span class="line">faciale</span>
+              </h3>
+              <p
+                id="card__content-3"
+                class="content card__content vertical-text card__content-3"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-right" id="card-4">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-4"
+                class="title card__title vertical-text card__title-4"
+                data-splitting="words"
+              >
+                <span class="line">4.</span
+                ><span class="line">Pachete combinate</span
+                ><span class="line">de remodelare</span
+                ><span class="line">corporală</span>
+              </h3>
+              <p
+                id="card__content-4"
+                class="content card__content vertical-text card__content-4"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-left" id="card-5">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-5"
+                class="title card__title vertical-text card__title-5"
+                data-splitting="words"
+              >
+                <span class="line">5.</span
+                ><span class="line">Pachete pentru</span
+                ><span class="line">amelioarera</span
+                ><span class="line">durerilor</span>
+              </h3>
+              <p
+                id="card__content-5"
+                class="content card__content vertical-text card__content-5"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-right" id="card-6">
+            <div class="card__image-wrapper">
+              <span
+                class="card__image-bg vertical-bg"
+                style="background-image: url(/public/about-under.jpg);"
+              ></span
+              ><span class="card__image-overlay"></span>
+            </div>
+            <div class="card__text">
+              <h3
+                id="card__title-6"
+                class="title card__title vertical-text card__title-6"
+                data-splitting="words"
+              >
+                <span class="line">6.</span
+                ><span class="line">Terapii combinate</span
+                ><span class="line">cu apă</span>
+              </h3>
+              <p
+                id="card__content-6"
+                class="content card__content vertical-text card__content-6"
+                data-splitting="words"
+              >
+                Spicy jalapeno bacon ipsum dolor amet tail swine strip steak,
+                beef ribs buffalo burgdoggen short ribs flank chuck cupim
+                turducken shoulder t-bone.
+              </p>
+              <div class="button card__button vertical-text">
+                <div><a href="#">Apasă aici</a></div>
+                <div><a href="#">Apasă aici</a></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="items" class="items">
+        <h3
+          id="items__title"
+          class="title items__title vertical-text"
+          data-splitting="words"
+        >
+          <span class="line">Vizualizează câteva</span
+          ><span class="line">exemple din</span
+          ><span class="line">pachetele noastre</span>
+        </h3>
+        <div class="items__list">
+          <div id="items__row-1" class="items__row">
+            <div class="item item-left" id="item-1">
+              <div class="item__image">
+                <span
+                  class="item__image-bg"
+                  style="background-image: url(/public/about-under.jpg);"
+                ></span>
+              </div>
+              <div class="item__text-wrapper">
+                <h3
+                  id="item__title-1__product"
+                  class="title item__title vertical-text item__title-1__product"
+                  data-splitting="words"
+                >
+                  <span class="line">Produs</span
+                  ><span class="line">exemplu</span><span class="line">#1</span>
+                </h3>
+                <div class="item__price">
+                  <p>35</p>
+                </div>
+              </div>
+              <div class="button item__button vertical-text">
+                <div><a>Află mai multe</a></div>
+                <div><a>Află mai multe</a></div>
+              </div>
+            </div>
+            <div class="item item-right" id="item-2">
+              <div class="item__image">
+                <span
+                  class="item__image-bg"
+                  style="background-image: url(/public/about-under.jpg);"
+                ></span>
+              </div>
+              <div class="item__text-wrapper">
+                <h3
+                  id="item__title-2__product"
+                  class="title item__title vertical-text item__title-2__product"
+                  data-splitting="words"
+                >
+                  <span class="line">Produs</span
+                  ><span class="line">exemplu</span><span class="line">#2</span>
+                </h3>
+                <div class="item__price">
+                  <p>105</p>
+                </div>
+              </div>
+              <div class="button item__button vertical-text">
+                <div><a>Află mai multe</a></div>
+                <div><a>Află mai multe</a></div>
+              </div>
+            </div>
+          </div>
+          <div id="items__row-2" class="items__row">
+            <div class="item item-left" id="item-3">
+              <div class="item__image">
+                <span
+                  class="item__image-bg"
+                  style="background-image: url(/public/about-under.jpg);"
+                ></span>
+              </div>
+              <div class="item__text-wrapper">
+                <h3
+                  id="item__title-3__product"
+                  class="title item__title vertical-text item__title-3__product"
+                  data-splitting="words"
+                >
+                  <span class="line">Produs</span
+                  ><span class="line">exemplu</span><span class="line">#3</span>
+                </h3>
+                <div class="item__price">
+                  <p>335</p>
+                </div>
+              </div>
+              <div class="button item__button vertical-text">
+                <div><a>Află mai multe</a></div>
+                <div><a>Află mai multe</a></div>
+              </div>
+            </div>
+            <div class="item item-right" id="item-4">
+              <div class="item__image">
+                <span
+                  class="item__image-bg"
+                  style="background-image: url(/public/about-under.jpg);"
+                ></span>
+              </div>
+              <div class="item__text-wrapper">
+                <h3
+                  id="item__title-4__product"
+                  class="title item__title vertical-text item__title-4__product"
+                  data-splitting="words"
+                >
+                  <span class="line">Produs</span
+                  ><span class="line">exemplu</span><span class="line">#4</span>
+                </h3>
+                <div class="item__price">
+                  <p>5</p>
+                </div>
+              </div>
+              <div class="button item__button vertical-text">
+                <div><a>Află mai multe</a></div>
+                <div><a>Află mai multe</a></div>
+              </div>
+            </div>
+          </div>
+          <div id="items__lotus" class="items__lotus">
+            <span class="items__lotus-bg"></span>
+          </div>
+        </div>
+      </section>
+      <section id="options" class="options">
+        <h3
+          id="option__title-main"
+          class="title option__title vertical-text option__title-main"
+          data-splitting="words"
+        >
+          <span class="line">Faceți</span><span class="line">alegerea</span
+          ><span class="line">potrivită</span>
+        </h3>
+        <div
+          class="option"
+          id="option-1"
+          style="--option: 0; --title: 'Cadou virtual';"
+          data-editable="title"
+        >
+          <div class="option__text">
+            <ul class="option__list" id="option__list-left" data-count="5">
+              <li class="option__list-item" style="--index: 0;">
+                <p
+                  id="option__content-0-left"
+                  class="content option__content vertical-text option__content-0-left"
+                  data-splitting="words"
+                >
+                  Vei primi un cod
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 1;">
+                <p
+                  id="option__content-1-left"
+                  class="content option__content vertical-text option__content-1-left"
+                  data-splitting="words"
+                >
+                  Se trimite instant pe mail
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 2;">
+                <p
+                  id="option__content-2-left"
+                  class="content option__content vertical-text option__content-2-left"
+                  data-splitting="words"
+                >
+                  Cuprinde toate informațiile necesare
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 3;">
+                <p
+                  id="option__content-3-left"
+                  class="content option__content vertical-text option__content-3-left"
+                  data-splitting="words"
+                >
+                  Cost scăzut
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 4;">
+                <p
+                  id="option__content-4-left"
+                  class="content option__content vertical-text option__content-4-left"
+                  data-splitting="words"
+                >
+                  Nu necesită transport
+                </p>
+              </li>
+            </ul>
+            <div class="button option__button vertical-text">
+              <div><a href="#">Comandă acum</a></div>
+              <div><a href="#">Comandă acum</a></div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="option"
+          id="option-2"
+          style="--option: 1; --title: 'Cadou fizic';"
+          data-editable="title"
+        >
+          <div class="option__text">
+            <ul class="option__list" id="option__list-right" data-count="5">
+              <li class="option__list-item" style="--index: 0;">
+                <p
+                  id="option__content-0-right"
+                  class="content option__content vertical-text option__content-0-right"
+                  data-splitting="words"
+                >
+                  Include beneficiile cadoului virtual
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 1;">
+                <p
+                  id="option__content-1-right"
+                  class="content option__content vertical-text option__content-1-right"
+                  data-splitting="words"
+                >
+                  Cutie de cadou
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 2;">
+                <p
+                  id="option__content-2-right"
+                  class="content option__content vertical-text option__content-2-right"
+                  data-splitting="words"
+                >
+                  Voucher fizic
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 3;">
+                <p
+                  id="option__content-3-right"
+                  class="content option__content vertical-text option__content-3-right"
+                  data-splitting="words"
+                >
+                  Mesaj unic
+                </p>
+              </li>
+              <li class="option__list-item" style="--index: 4;">
+                <p
+                  id="option__content-4-right"
+                  class="content option__content vertical-text option__content-4-right"
+                  data-splitting="words"
+                >
+                  Transport inclus până la client
+                </p>
+              </li>
+            </ul>
+            <div class="button option__button vertical-text">
+              <div><a href="#">Comandă acum</a></div>
+              <div><a href="#">Comandă acum</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="final" class="final">
+        <div class="final__container">
+          <div class="final__title-wrapper" style="--index: 1;">
+            <h3
+              id="final__title-left"
+              class="title final__title vertical-text final__title-left"
+              data-splitting="words"
+            >
+              <span class="line"
+                >Nu mai aștepta ocazia perfectă sau un moment anume</span
+              >
+            </h3>
+          </div>
+          <div class="final__title-wrapper" style="--index: 2;">
+            <h3
+              id="final__title-right"
+              class="title final__title vertical-text final__title-right"
+              data-splitting="words"
+            >
+              <span class="line">Comandă acum cadoul ideal și original</span>
+            </h3>
+          </div>
+          <div class="final__title-wrapper" style="--index: 3;">
+            <h3
+              id="final__title-left"
+              class="title final__title vertical-text final__title-left"
+              data-splitting="words"
+            >
+              <span class="line"
+                >Sigur îți vrei surprinde persoanele dragi</span
+              >
+            </h3>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/dist/script.js"></script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
  * Fancy Loading effect
  */
 const loadingElm = document.getElementById("loading");
-import startAnimation from "./startAnimation";
+import startAnimation from "./start-animation";
 
 if (window.location.search.includes("noloading")) {
   startAnimation();

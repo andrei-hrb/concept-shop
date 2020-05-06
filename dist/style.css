@@ -1581,7 +1581,7 @@ section {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("/frontend/public/lotus.png");
+  background-image: url("/public/lotus.png");
   background-size: 52px;
   background-position: center;
   background-repeat: no-repeat;
@@ -1835,7 +1835,7 @@ section {
 }
 
 .option__list {
-  list-style-image: url("/frontend/public/list.png");
+  list-style-image: url("/public/list.png");
 }
 
 .option__list-item .content {
