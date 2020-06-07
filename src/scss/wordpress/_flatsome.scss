@@ -1,0 +1,60 @@
+* {
+  -webkit-font-smoothing: unset;
+  -moz-osx-font-smoothing: unset;
+}
+
+body {
+  line-height: unset;
+}
+
+main {
+  background-color: #f2f2f2 !important;
+}
+
+p {
+  margin-top: unset;
+  margin-bottom: unset;
+  box-sizing: unset;
+  margin: 2rem 0;
+}
+
+.button:not(.back-to-top) {
+  display: block;
+
+  color: unset;
+  background-color: unset;
+  border-color: unset;
+  position: unset;
+  text-transform: unset;
+  font-size: unset;
+  letter-spacing: unset;
+  cursor: unset;
+  font-weight: unset;
+  text-align: unset;
+  color: unset;
+  text-decoration: unset;
+  border: unset;
+  vertical-align: unset;
+  border-radius: unset;
+  margin-top: unset;
+  margin-right: unset;
+  text-shadow: unset;
+  line-height: unset;
+  min-height: unset;
+  padding: unset;
+  max-width: unset;
+  transition: unset;
+}
+
+div {
+  box-sizing: unset;
+}
+
+ul {
+  list-style: unset;
+}
+
+div#cookie-notice,
+div#cookie-notice * {
+  animation-play-state: running !important;
+}

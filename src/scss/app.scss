@@ -1,8 +1,11 @@
 @use "node_modules/normalize.css/normalize.css";
 
+@import "wordpress/flatsome";
+
 @import "base/colors";
 @import "base/base";
 @import "base/typo";
+@import "base/vars";
 
 @import "animations/background";
 @import "animations/content";

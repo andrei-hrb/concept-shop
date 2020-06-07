@@ -4,7 +4,8 @@
 const loadingElm = document.getElementById("loading");
 import startAnimation from "./start-animation";
 
-if (window.location.search.includes("noloading")) {
+if (loadingElm.classList.contains("noloading")) {
+  loadingElm.remove();
   startAnimation();
 } else {
   setTimeout(() => {

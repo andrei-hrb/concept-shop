@@ -14,7 +14,7 @@ export default function startAnimation() {
 
     "final",
   ];
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= document.getElementById("cards").dataset.count; i++) {
     watchedElements.push("card-" + i);
   }
 

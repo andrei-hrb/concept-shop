@@ -4,8 +4,7 @@
   overflow: hidden;
 
   &__container {
-    height: 120vh;
-    max-width: 140rem;
+    height: 75rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -27,7 +26,7 @@
       padding-left: 5rem;
       transform: translateX(-200%);
       animation: from-left 1s ease-out;
-      animation-delay: calc(1s * var(--index));
+      animation-delay: calc(0.5s * var(--index));
       animation-fill-mode: forwards;
     }
 
@@ -37,7 +36,7 @@
       padding-right: 5rem;
       transform: translateX(200%);
       animation: from-right 1s ease-out;
-      animation-delay: calc(1s * var(--index));
+      animation-delay: calc(0.5s * var(--index));
       animation-fill-mode: forwards;
     }
   }
@@ -62,7 +61,7 @@
 @media only screen and (max-width: 768px) {
   .final {
     &__title {
-      font-size: 3.5rem;
+      font-size: 2.85rem;
 
       &-left {
         padding-left: 2rem;

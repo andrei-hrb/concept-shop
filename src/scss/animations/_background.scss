@@ -1,19 +1,31 @@
 @keyframes filter-bg {
   0% {
-    transform: scale(1.05);
     filter: brightness(80%);
   }
 
   60% {
-    transform: scale(1.05);
     filter: brightness(100%);
   }
 
   100% {
-    transform: scale(1);
     filter: brightness(70%);
   }
 }
+
+@keyframes horiz-filter-bg {
+  0% {
+    filter: brightness(80%);
+  }
+
+  60% {
+    filter: brightness(100%);
+  }
+
+  100% {
+    filter: brightness(70%);
+  }
+}
+
 
 @keyframes move-bg-overlay-up {
   0% {
