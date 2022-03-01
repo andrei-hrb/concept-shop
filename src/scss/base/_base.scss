@@ -1,23 +1,23 @@
 html {
-  font-size: 62.5%;
-  width: 100vw;
-  background-color: $white;
+    font-size: 62.5%;
+    width: 100vw;
+    background-color: $white;
 }
 
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 * {
-  animation-play-state: paused !important;
+    animation-play-state: paused !important;
 }
 
 .start,
 .start * {
-  animation-play-state: running !important;
+    animation-play-state: running !important;
 }
 
 section {
-  width: 100vw;
-  height: 90vh;
+    width: 100vw;
+    height: 90vh;
 }

@@ -1,16 +1,16 @@
-const watchedElements = ["heading", "about", "intro", "cards"];
-for (var i = 1; i <= document.getElementById("cards").dataset.count; i++) {
-  watchedElements.push("card-" + i);
+const watchedElements = ['heading', 'about', 'intro', 'cards']
+for (var i = 1; i <= document.getElementById('cards').dataset.count; i++) {
+    watchedElements.push('card-' + i)
 }
 watchedElements
-  .map((section) => document.getElementById(section))
-  .forEach((section) => {
-    section.style.setProperty("--height", section.offsetTop);
-  });
+    .map((section) => document.getElementById(section))
+    .forEach((section) => {
+        section.style.setProperty('--height', section.offsetTop)
+    })
 
-window.addEventListener("scroll", scrollWindowHandler, { passive: true });
+window.addEventListener('scroll', scrollWindowHandler, { passive: true })
 
 function scrollWindowHandler() {
-  document.body.style.setProperty("--scrolled", window.scrollY);
+    document.body.style.setProperty('--scrolled', window.scrollY)
 }
-scrollWindowHandler();
+scrollWindowHandler()

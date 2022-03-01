@@ -1,15 +1,15 @@
 /**
  * Fancy Loading effect
  */
-const loadingElm = document.getElementById("loading");
-import startAnimation from "./start-animation";
+const loadingElm = document.getElementById('loading')
+import startAnimation from './start-animation'
 
-if (loadingElm.classList.contains("noloading")) {
-  loadingElm.remove();
-  startAnimation();
+if (loadingElm.classList.contains('noloading')) {
+    loadingElm.remove()
+    startAnimation()
 } else {
-  setTimeout(() => {
-    loadingElm.remove();
-    startAnimation();
-  }, 6400);
+    setTimeout(() => {
+        loadingElm.remove()
+        startAnimation()
+    }, 6400)
 }

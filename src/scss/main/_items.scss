@@ -1,309 +1,307 @@
 .item {
-  &s {
-    overflow: hidden;
-    background-color: $blue;
-    height: auto;
+    &s {
+        overflow: hidden;
+        background-color: $blue;
+        height: auto;
+
+        &__title {
+            margin-top: 5rem;
+            text-align: center;
+            line-height: calc(100% + 36px);
+
+            & .line {
+                padding-top: 0;
+            }
+
+            & .word {
+                opacity: 0;
+                animation-delay: 0.5s;
+            }
+        }
+
+        &__row {
+            & > * {
+                animation-play-state: paused !important;
+            }
+
+            &.start > * {
+                animation-play-state: running !important;
+            }
+        }
+
+        &__list {
+            width: 90%;
+            max-width: 100rem;
+            margin: 0 auto;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: ' ';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $gold;
+            }
+
+            &::before {
+                width: 80%;
+                height: 0.75rem;
+            }
+
+            &::after {
+                width: 0.75rem;
+                height: 80%;
+            }
+        }
+
+        &__lotus {
+            display: inline-block;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            border-radius: 999px;
+            width: 84px;
+            height: 84px;
+            background-color: $blue;
+            transform: translate(-50%, -50%) scale(0) rotate(90deg);
+            animation: lotus 1.8s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+
+            &-bg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-size: 52px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    display: inline-block;
+    width: calc(50% - 2.5px - 6rem);
+    height: 65rem;
+    padding: 3rem;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &-left {
+        text-align: right;
+
+        & .item__title {
+            text-align: right;
+        }
+    }
+
+    &-right {
+        & .item__price {
+            left: unset;
+            right: 0;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 40rem;
+
+        &-bg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__text-wrapper {
+        &:hover {
+            & .item__title {
+                opacity: 0.2;
+            }
+
+            & .item__price {
+                opacity: 1;
+            }
+        }
+    }
 
     &__title {
-      margin-top: 5rem;
-      text-align: center;
-      line-height: calc(100% + 36px);
+        font-size: 3.5rem;
+        margin-top: 3rem;
+        transition: 0.7s ease-out;
 
-      & .line {
-        padding-top: 0;
-      }
-
-      & .word {
-        opacity: 0;
-        animation-delay: 0.5s;
-      }
-    }
-
-    &__row {
-      &>* {
-        animation-play-state: paused !important;
-      }
-
-      &.start>* {
-        animation-play-state: running !important;
-      }
-    }
-
-    &__list {
-      width: 90%;
-      max-width: 100rem;
-      margin: 0 auto;
-      position: relative;
-
-      &::before,
-      &::after {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: $gold;
-      }
-
-      &::before {
-        width: 80%;
-        height: 0.75rem;
-      }
-
-      &::after {
-        width: 0.75rem;
-        height: 80%;
-      }
-    }
-
-    &__lotus {
-      display: inline-block;
-      position: absolute;
-      z-index: 2;
-      top: 50%;
-      left: 50%;
-      border-radius: 999px;
-      width: 84px;
-      height: 84px;
-      background-color: $blue;
-      transform: translate(-50%, -50%) scale(0) rotate(90deg);
-      animation: lotus 1.8s;
-      animation-delay: 1.5s;
-      animation-fill-mode: forwards;
-
-      &-bg {
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-size: 52px;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-  }
-
-  display: inline-block;
-  width: calc(50% - 2.5px - 6rem);
-  height: 65rem;
-  padding: 3rem;
-  margin: 0;
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-  position: relative;
-
-  &-left {
-    text-align: right;
-
-    & .item__title {
-      text-align: right;
-    }
-  }
-
-  &-right {
-    & .item__price {
-      left: unset;
-      right: 0;
-    }
-  }
-
-  &__image {
-    width: 100%;
-    height: 40rem;
-
-    &-bg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  &__text-wrapper {
-    &:hover {
-      & .item__title {
-        opacity: 0.2;
-      }
-
-      & .item__price {
-        opacity: 1;
-      }
-    }
-  }
-
-  &__title {
-    font-size: 3.5rem;
-    margin-top: 3rem;
-    transition: 0.7s ease-out;
-
-    & .word {
-      opacity: 1;
-      animation: 0.1s placeholder;
-      transform: translate3d(0, 0, 0) scaleY(1) rotate(0deg);
-    }
-  }
-
-  &__price {
-    position: absolute;
-    top: 43rem;
-    left: 0;
-    padding: 3rem;
-    opacity: 0.2;
-    transition: 0.7s ease-out;
-
-    & p {
-      display: inline-block;
-      font-size: 16.5rem;
-      font-weight: 500;
-      font-family: $font;
-      margin: 0;
-      color: $white;
-
-      &::after {
-        content: "Lei";
-        text-transform: uppercase;
-        display: inline-block;
-        font-size: 5rem !important;
-        font-weight: 700;
-        bottom: 0;
-        right: 0;
-        color: $gold;
-      }
-    }
-  }
-
-  &__button.button {
-    width: 50%;
-    margin: 3rem auto;
-  }
-}
-
-#item- {
-
-  &1,
-  &3 {
-    transform: translate3d(-100%, 0, 0);
-    animation: enter-from-left 2.3s;
-  }
-
-  &2,
-  &4 {
-    transform: translate3d(100%, 0, 0);
-    animation: enter-from-right 2.3s;
-  }
-
-  &1,
-  &2,
-  &3,
-  &4 {
-    animation-delay: 0.5s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .item {
-    &s {
-      &__title {
-        margin-bottom: 4.5rem;
-
-        & .line {
-          line-height: calc(100% + 24px);
+        & .word {
+            opacity: 1;
+            animation: 0.1s placeholder;
+            transform: translate3d(0, 0, 0) scaleY(1) rotate(0deg);
         }
-      }
-
-      &__list {
-
-        &::before,
-        &::after {
-          display: none;
-        }
-      }
-
-      &__lotus {
-        display: none;
-      }
     }
-
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 6.75rem;
 
     &__price {
-      padding: 0;
-      padding-top: 1.5rem;
+        position: absolute;
+        top: 43rem;
+        left: 0;
+        padding: 3rem;
+        opacity: 0.2;
+        transition: 0.7s ease-out;
 
-      & p {
-        font-size: 12rem;
-      }
-    }
+        & p {
+            display: inline-block;
+            font-size: 16.5rem;
+            font-weight: 500;
+            font-family: $font;
+            margin: 0;
+            color: $white;
 
-    &__button {
-      width: 20rem;
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .item {
-    &s {
-      &__title {
-        margin-bottom: 4.5rem;
-
-        & .line {
-          line-height: calc(100% + 13px);
+            &::after {
+                content: 'Lei';
+                text-transform: uppercase;
+                display: inline-block;
+                font-size: 5rem !important;
+                font-weight: 700;
+                bottom: 0;
+                right: 0;
+                color: $gold;
+            }
         }
-      }
     }
 
     &__button.button {
-      width: 70vw;
+        width: 50%;
+        margin: 3rem auto;
     }
-  }
+}
+
+#item- {
+    &1,
+    &3 {
+        transform: translate3d(-100%, 0, 0);
+        animation: enter-from-left 2.3s;
+    }
+
+    &2,
+    &4 {
+        transform: translate3d(100%, 0, 0);
+        animation: enter-from-right 2.3s;
+    }
+
+    &1,
+    &2,
+    &3,
+    &4 {
+        animation-delay: 0.5s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .item {
+        &s {
+            &__title {
+                margin-bottom: 4.5rem;
+
+                & .line {
+                    line-height: calc(100% + 24px);
+                }
+            }
+
+            &__list {
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+
+            &__lotus {
+                display: none;
+            }
+        }
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 6.75rem;
+
+        &__price {
+            padding: 0;
+            padding-top: 1.5rem;
+
+            & p {
+                font-size: 12rem;
+            }
+        }
+
+        &__button {
+            width: 20rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .item {
+        &s {
+            &__title {
+                margin-bottom: 4.5rem;
+
+                & .line {
+                    line-height: calc(100% + 13px);
+                }
+            }
+        }
+
+        &__button.button {
+            width: 70vw;
+        }
+    }
 }
 
 @keyframes lotus {
-  0% {
-    transform: translate(-50%, -50%) scale(0) rotate(90deg);
-  }
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(90deg);
+    }
 
-  100% {
-    transform: translate(-50%, -50%) scale(1) rotate(0);
-  }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+    }
 }
 
 @keyframes enter-from-left {
-  1% {
-    // annoying out-of-nowere bug, that I don't know were it came from; keep it on 1
-    opacity: 1;
-    transform: translate3d(-200%, 0, 0);
-  }
+    1% {
+        // annoying out-of-nowere bug, that I don't know were it came from; keep it on 1
+        opacity: 1;
+        transform: translate3d(-200%, 0, 0);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translate3d(0%, 0, 0);
-  }
+    100% {
+        opacity: 1;
+        transform: translate3d(0%, 0, 0);
+    }
 }
 
 @keyframes enter-from-right {
-  1% {
-    opacity: 1;
-    transform: translate3d(200%, 0, 0);
-  }
+    1% {
+        opacity: 1;
+        transform: translate3d(200%, 0, 0);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translate3d(0%, 0, 0);
-  }
+    100% {
+        opacity: 1;
+        transform: translate3d(0%, 0, 0);
+    }
 }
 
 @keyframes placeholder {
-  0% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 1;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }

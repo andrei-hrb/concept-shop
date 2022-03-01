@@ -1,224 +1,230 @@
 .option {
-  &s {
-    overflow: hidden;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 4rem;
-    position: relative;
-    height: auto;
-    padding-bottom: 4rem;
-  }
-
-  width: 50rem;
-  height: 70rem;
-  padding-bottom: 4rem;
-  margin-top: 34rem;
-  transition: 0.3s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-  0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 5px 5px 10px 10px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  animation: opacity-anim 1s ease-out;
-  animation-delay: calc(1s + 3.25s * var(--option));
-  animation-fill-mode: forwards;
-
-  &__text {
-    padding: 0 4rem;
-  }
-
-  &__title {
-    transform: rotate(90deg);
-    width: max-content;
-    height: max-content;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    &-main {
-      transform: translateX(-50%);
-      color: $blue;
-      text-align: center;
-      top: 0;
-      left: 50%;
-
-      & .word {
-        opacity: 0;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        transition: 0.3s;
-      }
-    }
-  }
-
-  &__list {
-    &-item {
-      & .content {
-        font-size: 3.25rem;
-      }
-    }
-  }
-
-  &__content {
-    & .word {
-      transition: 0.3s;
-      animation-delay: calc(1.8s + var(--index) * 0.5s + 0.05s * var(--word-index) + 3.5s * var(--option));
-    }
-  }
-
-  &__button.button {
-    margin: 0 auto;
-    margin-top: 5rem;
-    opacity: 0;
-    width: 70%;
-    animation: opacity-anim 1s ease-out;
-    animation-fill-mode: forwards;
-    animation-delay: calc(4s + (var(--option)) * 3.5s);
-  }
-
-  &::before {
-    content: var(--title);
-    position: absolute;
-    top: -0.85%;
-    left: 59%;
-    text-transform: uppercase;
-    font-family: $font;
-    font-weight: 700;
-    color: $white;
-    opacity: 0.25;
-    transform-origin: 0 0;
-    font-size: 15rem;
-    transform: rotate(90deg);
-  }
-
-  &:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  }
-}
-
-#option- {
-  &1 {
-    background-color: $gold;
-
-    &__title {
-      & .word {
-        color: $white;
-      }
-    }
-
-    &__content {
-      & .word {
-        color: $white;
-      }
-    }
-
-    & .button {
-      & > div {
-        background-color: $white;
-
-        & a {
-          color: $gold;
-        }
-      }
-    }
-  }
-
-  &2 {
-    background-color: $blue;
-
-    &__title {
-      & .word {
-        color: $white;
-      }
-    }
-
-    &__content {
-      & .word {
-        color: $white;
-      }
-    }
-
-    &::before {
-      left: 102.5%;
-    }
-
-    & .button {
-      & > div {
-        background-color: $gold;
-
-        & a {
-          color: $white;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .option {
     &s {
-      flex-direction: column;
-      height: 140rem;
-      align-items: center;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 4rem;
+        position: relative;
+        height: auto;
+        padding-bottom: 4rem;
     }
 
-    margin-top: 28rem;
+    width: 50rem;
+    height: 70rem;
+    padding-bottom: 4rem;
+    margin-top: 34rem;
+    transition: 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 10px 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: opacity-anim 1s ease-out;
+    animation-delay: calc(1s + 3.25s * var(--option));
+    animation-fill-mode: forwards;
 
     &__text {
-      margin: 0 auto;
+        padding: 0 4rem;
+    }
+
+    &__title {
+        transform: rotate(90deg);
+        width: max-content;
+        height: max-content;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        &-main {
+            transform: translateX(-50%);
+            color: $blue;
+            text-align: center;
+            top: 0;
+            left: 50%;
+
+            & .word {
+                opacity: 0;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+                transition: 0.3s;
+            }
+        }
     }
 
     &__list {
-      &-item {
-        & .content {
-          font-size: 2.5rem;
+        &-item {
+            list-style-type: none;
+            padding: 0;
+
+            & .content {
+                font-size: 3.25rem;
+            }
         }
-      }
     }
 
-    &__button {
-      margin-top: 5rem;
-    }
-  }
-
-  #option- {
-    &2 {
-      margin-top: 4rem;
-
-      &::before {
-        left: 59%;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .option {
-    &s {
-      height: 120rem;
-    }
-
-    margin-top: 19rem;
-    width: 90vw;
-
-    &__list {
-      &-item {
-        & .content {
-          font-size: 2rem;
+    &__content {
+        & .word {
+            transition: 0.3s;
+            animation-delay: calc(
+                1.8s + var(--index) * 0.5s + 0.05s * var(--word-index) + 3.5s *
+                    var(--option)
+            );
         }
-      }
     }
 
     &__button.button {
-      margin-top: 3rem;
-      width: 70vw;
+        margin: 0 auto;
+        margin-top: 5rem;
+        opacity: 0;
+        width: 70%;
+        animation: opacity-anim 1s ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: calc(4s + (var(--option)) * 3.5s);
     }
 
     &::before {
-      font-size: 10rem;
-      left: 29.65vh !important;
+        content: var(--title);
+        position: absolute;
+        top: -0.85%;
+        left: 59%;
+        text-transform: uppercase;
+        font-family: $font;
+        font-weight: 700;
+        color: $white;
+        opacity: 0.25;
+        transform-origin: 0 0;
+        font-size: 15rem;
+        transform: rotate(90deg);
     }
-  }
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+}
+
+#option- {
+    &1 {
+        background-color: $gold;
+
+        &__title {
+            & .word {
+                color: $white;
+            }
+        }
+
+        &__content {
+            & .word {
+                color: $white;
+            }
+        }
+
+        & .button {
+            & > div {
+                background-color: $white;
+
+                & a {
+                    color: $gold;
+                }
+            }
+        }
+    }
+
+    &2 {
+        background-color: $blue;
+
+        &__title {
+            & .word {
+                color: $white;
+            }
+        }
+
+        &__content {
+            & .word {
+                color: $white;
+            }
+        }
+
+        &::before {
+            left: 102.5%;
+        }
+
+        & .button {
+            & > div {
+                background-color: $gold;
+
+                & a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .option {
+        &s {
+            flex-direction: column;
+            height: 140rem;
+            align-items: center;
+        }
+
+        margin-top: 28rem;
+
+        &__text {
+            margin: 0 auto;
+        }
+
+        &__list {
+            &-item {
+                & .content {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        &__button {
+            margin-top: 5rem;
+        }
+    }
+
+    #option- {
+        &2 {
+            margin-top: 4rem;
+
+            &::before {
+                left: 59%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .option {
+        &s {
+            height: 120rem;
+        }
+
+        margin-top: 19rem;
+        width: 90vw;
+
+        &__list {
+            &-item {
+                & .content {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        &__button.button {
+            margin-top: 3rem;
+            width: 70vw;
+        }
+
+        &::before {
+            font-size: 10rem;
+            left: 29.65vh !important;
+        }
+    }
 }

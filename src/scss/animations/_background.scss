@@ -1,68 +1,67 @@
 @keyframes filter-bg {
-  0% {
-    filter: brightness(80%);
-  }
+    0% {
+        filter: brightness(80%);
+    }
 
-  60% {
-    filter: brightness(100%);
-  }
+    60% {
+        filter: brightness(100%);
+    }
 
-  100% {
-    filter: brightness(70%);
-  }
+    100% {
+        filter: brightness(70%);
+    }
 }
 
 @keyframes horiz-filter-bg {
-  0% {
-    filter: brightness(80%);
-  }
+    0% {
+        filter: brightness(80%);
+    }
 
-  60% {
-    filter: brightness(100%);
-  }
+    60% {
+        filter: brightness(100%);
+    }
 
-  100% {
-    filter: brightness(70%);
-  }
+    100% {
+        filter: brightness(70%);
+    }
 }
 
-
 @keyframes move-bg-overlay-up {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
 
-  100% {
-    transform: translate3d(0, -100%, 0);
-  }
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
 }
 
 @keyframes move-bg-overlay-right {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
 
-  100% {
-    transform: translate3d(100%, 0, 0);
-  }
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
 @keyframes move-bg-overlay-down {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
 
-  100% {
-    transform: translate3d(0, 100%, 0);
-  }
+    100% {
+        transform: translate3d(0, 100%, 0);
+    }
 }
 
 @keyframes move-bg-overlay-left {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
 
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
 }

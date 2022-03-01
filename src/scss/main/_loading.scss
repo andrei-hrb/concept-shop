@@ -1,77 +1,77 @@
 .loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  transform: translate3d(0, 0, 0);
-  animation: move-up-from-0 1.2s ease-in;
-  animation-delay: 5s;
-  animation-fill-mode: forwards;
-  z-index: 1998;
-
-  & * {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-  }
-
-  &-first {
-    background-color: $blue;
-    z-index: 1999;
-  }
-
-  &-second {
-    background-color: $beige;
-    z-index: 2000;
-    transform: translate3d(0, 100%, 0);
-    animation: move-up-from-100 3.5s ease-in-out;
-    animation-delay: 1s;
+    transform: translate3d(0, 0, 0);
+    animation: move-up-from-0 1.2s ease-in;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
-  }
+    z-index: 1998;
 
-  &-logo {
-    z-index: 2001;
-    background-size: contain;
-    width: calc(20rem * 0.8205);
-    height: 20rem;
-    background-repeat: no-repeat;
-    top: 50%;
-    left: 50%;
-    transform: translate(-40%, -50%) scale(0.8);
-    animation: scale-up 3.5s ease-in-out;
-    animation-fill-mode: forwards;
-  }
+    & * {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &-first {
+        background-color: $blue;
+        z-index: 1999;
+    }
+
+    &-second {
+        background-color: $beige;
+        z-index: 2000;
+        transform: translate3d(0, 100%, 0);
+        animation: move-up-from-100 3.5s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    &-logo {
+        z-index: 2001;
+        background-size: contain;
+        width: calc(20rem * 0.8205);
+        height: 20rem;
+        background-repeat: no-repeat;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%) scale(0.8);
+        animation: scale-up 3.5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 }
 
 @keyframes move-up-from-100 {
-  0% {
-    transform: translate3d(0, 100%, 0);
-  }
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
 
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 @keyframes move-up-from-0 {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
 
-  100% {
-    transform: translate3d(0, -100%, 0);
-  }
+    100% {
+        transform: translate3d(0, -100%, 0);
+    }
 }
 
 @keyframes scale-up {
-  0% {
-    transform: translate(-50%, -40%) scale(0.8);
-  }
+    0% {
+        transform: translate(-50%, -40%) scale(0.8);
+    }
 
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
